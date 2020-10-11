@@ -6,8 +6,11 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
+
+
 
 @end
 
@@ -16,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    self.window = [UIWindow new];
+    [self.window setRootViewController: [MainViewController new]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

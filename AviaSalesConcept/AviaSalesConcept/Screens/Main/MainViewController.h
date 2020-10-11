@@ -9,6 +9,7 @@
 
 @interface MainViewController : UIViewController
 
+@property (nonatomic) UILabel* userNameLabel;
 
 @end
 
