@@ -62,9 +62,19 @@
         UIButton* button = [UIButton new];
         [button setImage: [UIImage imageNamed:@"resto"] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor colorNamed:@"resto"];
-        button.layer.cornerRadius = 16;
+        
         [button setTranslatesAutoresizingMaskIntoConstraints:NO];
         [button addTarget:self action:@selector(didTap) forControlEvents: UIControlEventTouchUpInside];
+        
+        // Shadow
+        button.layer.cornerRadius = 16;
+        button.layer.masksToBounds = NO;
+        button.layer.shadowOffset = CGSizeMake(0, 5);
+        button.layer.shadowRadius = 5;
+        button.layer.shadowOpacity = 0.5;
+        button.layer.shadowColor = [UIColor colorNamed:@"resto"].CGColor;
+        
+        //
         _restorantsButton = button;
     }
     
@@ -108,6 +118,12 @@
     
     NSLog(@"didLoad");
     
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    _restorantsButton.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect: _restorantsButton.bounds cornerRadius:16].CGPath;
 }
 
 - (void) didTap {
