@@ -10,6 +10,10 @@
 @interface MainViewController : UIViewController
 
 @property (nonatomic) UILabel* userNameLabel;
+@property (nonatomic) UIImageView* userAvatarView;
+@property (nonatomic) UILabel* userSubtitleLabel;
+
+
 
 @end
 

@@ -41,6 +41,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA1B3B9725334FF90097CBEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FA78342C2531AEA2004AD2B7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +90,7 @@
 		FA78345D2533230D004AD2B7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FA1B3B9725334FF90097CBEC /* Views */,
 				FA78343E2531AEA2004AD2B7 /* MainViewController.h */,
 				FA78343F2531AEA2004AD2B7 /* MainViewController.m */,
 				FA78345F25332320004AD2B7 /* Main.xcassets */,
