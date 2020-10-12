@@ -23,6 +23,8 @@
 		FA9329CD25338030005D6847 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329CC25338030005D6847 /* City.m */; };
 		FA9329D425338342005D6847 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329D325338342005D6847 /* Country.m */; };
 		FA9329DA253383BC005D6847 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329D9253383BC005D6847 /* Airport.m */; };
+		FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329DE25349578005D6847 /* RestaurantCell.m */; };
+		FA9329E52534AC55005D6847 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329E42534AC55005D6847 /* Restaurant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,11 @@
 		FA9329D325338342005D6847 /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 		FA9329D8253383BC005D6847 /* Airport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
 		FA9329D9253383BC005D6847 /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		FA9329DD25349578005D6847 /* RestaurantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestaurantCell.h; sourceTree = "<group>"; };
+		FA9329DE25349578005D6847 /* RestaurantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantCell.m; sourceTree = "<group>"; };
+		FA9329E32534AC55005D6847 /* Restaurant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		FA9329E42534AC55005D6847 /* Restaurant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		FA9329E72534AD11005D6847 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,7 @@
 		FA1B3B9925335D520097CBEC /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
+				FA9329DC253485F8005D6847 /* Cells */,
 				FA1B3B9A25335DA10097CBEC /* RestorantsViewController.h */,
 				FA1B3B9B25335DA10097CBEC /* RestorantsViewController.m */,
 				FA1B3BA0253372820097CBEC /* Restaurants.xcassets */,
@@ -157,9 +165,11 @@
 		FA9329CA25337F9C005D6847 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA9329E22534AC2C005D6847 /* Restaurant */,
 				FA9329D725338353005D6847 /* Airport */,
 				FA9329D125338318005D6847 /* Country */,
 				FA9329D0253382FA005D6847 /* City */,
+				FA9329E72534AD11005D6847 /* Models.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +199,24 @@
 				FA9329D9253383BC005D6847 /* Airport.m */,
 			);
 			path = Airport;
+			sourceTree = "<group>";
+		};
+		FA9329DC253485F8005D6847 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA9329DD25349578005D6847 /* RestaurantCell.h */,
+				FA9329DE25349578005D6847 /* RestaurantCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA9329E22534AC2C005D6847 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				FA9329E32534AC55005D6847 /* Restaurant.h */,
+				FA9329E42534AC55005D6847 /* Restaurant.m */,
+			);
+			path = Restaurant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +295,11 @@
 			files = (
 				FA9329D425338342005D6847 /* Country.m in Sources */,
 				FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */,
+				FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */,
 				FA9329C825337F09005D6847 /* DataManager.m in Sources */,
 				FA9329CD25338030005D6847 /* City.m in Sources */,
 				FA1B3B9C25335DA10097CBEC /* RestorantsViewController.m in Sources */,
+				FA9329E52534AC55005D6847 /* Restaurant.m in Sources */,
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,

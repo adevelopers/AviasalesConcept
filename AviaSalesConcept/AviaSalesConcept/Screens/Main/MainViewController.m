@@ -83,11 +83,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = UIColor.blackColor;
     self.view.backgroundColor = [UIColor colorNamed:@"bg"];
     [self.view addSubview: self.userNameLabel];
     [self.view addSubview: self.userAvatarView];
     [self.view addSubview: self.userSubtitleLabel];
     [self.view addSubview: self.restorantsButton];
+    
+    
     
     NSLayoutConstraint* userAvatarRight = [self.userAvatarView.rightAnchor constraintEqualToAnchor: self.view.rightAnchor constant:-16];
     userAvatarRight.priority = 1000;
@@ -118,6 +122,16 @@
     
     NSLog(@"didLoad");
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewDidLayoutSubviews {

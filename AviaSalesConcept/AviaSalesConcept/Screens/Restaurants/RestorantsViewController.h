@@ -6,11 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Models.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RestorantsViewController : UIViewController
+@interface RestorantsViewController : UIViewController<UICollectionViewDataSource>
 
+@property (nonatomic, nonnull) UICollectionViewFlowLayout* layout;
+@property (nonatomic, nonnull) UICollectionView* collectionView;
+
+@property (nonatomic) NSMutableArray<Restaurant*>* items;
 
 @end
 
