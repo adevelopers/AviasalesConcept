@@ -6,6 +6,7 @@
 //
 
 #import "MainViewController.h"
+#import "RestorantsViewController.h"
 
 @interface MainViewController ()
 
@@ -55,12 +56,42 @@
     return  _userSubtitleLabel;
 }
 
+
+- (UIButton*)restorantsButton {
+    if (_restorantsButton == nil) {
+        UIButton* button = [UIButton new];
+        [button setImage: [UIImage imageNamed:@"resto"] forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor colorNamed:@"resto"];
+        
+        [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [button addTarget:self action:@selector(didTap) forControlEvents: UIControlEventTouchUpInside];
+        
+        // Shadow
+        button.layer.cornerRadius = 16;
+        button.layer.masksToBounds = NO;
+        button.layer.shadowOffset = CGSizeMake(0, 5);
+        button.layer.shadowRadius = 5;
+        button.layer.shadowOpacity = 0.5;
+        button.layer.shadowColor = [UIColor colorNamed:@"resto"].CGColor;
+        
+        //
+        _restorantsButton = button;
+    }
+    
+    return  _restorantsButton;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.tintColor = UIColor.blackColor;
     self.view.backgroundColor = [UIColor colorNamed:@"bg"];
     [self.view addSubview: self.userNameLabel];
     [self.view addSubview: self.userAvatarView];
     [self.view addSubview: self.userSubtitleLabel];
+    [self.view addSubview: self.restorantsButton];
+    
+    
     
     NSLayoutConstraint* userAvatarRight = [self.userAvatarView.rightAnchor constraintEqualToAnchor: self.view.rightAnchor constant:-16];
     userAvatarRight.priority = 1000;
@@ -81,10 +112,39 @@
         [self.userSubtitleLabel.topAnchor constraintEqualToAnchor: self.userNameLabel.bottomAnchor constant:0],
         [self.userSubtitleLabel.leftAnchor constraintEqualToAnchor: self.view.leftAnchor constant:16],
         userSubtitleRightToAvatarLeft,
+        
+        [self.restorantsButton.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
+        [self.restorantsButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+        [self.restorantsButton.widthAnchor constraintEqualToConstant:60],
+        [self.restorantsButton.heightAnchor constraintEqualToConstant:60],
+        
     ]];
     
     NSLog(@"didLoad");
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    _restorantsButton.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect: _restorantsButton.bounds cornerRadius:16].CGPath;
+}
+
+- (void) didTap {
+    NSLog(@"did tap");
+
+    RestorantsViewController* controller = [RestorantsViewController new];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 
