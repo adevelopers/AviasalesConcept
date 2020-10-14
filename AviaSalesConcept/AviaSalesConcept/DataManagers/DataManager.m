@@ -7,6 +7,7 @@
 
 #import "DataManager.h"
 
+
 @interface  DataManager()
 @property (nonatomic, strong)   NSMutableArray * countriesArray;
 @property (nonatomic, strong)   NSMutableArray * citiesArray;
@@ -88,5 +89,18 @@
         });
         NSLog(  @"Complete load data") ;
     } );
+}
+
+- (void) loadAirportsWithCompletion:(void (^)(NSArray<Airport*>* airports))completion {
+
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
+        NSArray* airportsJsonArray = [self arrayFromFileName: @"airports" ofType: @"json"];
+        self->_airportsArray = [self createObjectsFromArray:airportsJsonArray withType: DataSourceTypeAirport];
+        dispatch_async( dispatch_get_main_queue(), ^{
+            completion(airportsJsonArray);
+        });
+        NSLog(  @"Complete load data") ;
+    } );
+    
 }
 @end

@@ -35,10 +35,24 @@
     return _switchButton;
 }
 
+- (UILabel *)departureCaptionLabel {
+    if (_departureCaptionLabel == nil) {
+        UILabel* label = [UILabel new];
+        label.text = @"Отправление из";
+        label.textColor = [UIColor colorNamed:@"captionColor"];
+        label.font = [UIFont systemFontOfSize:15 weight:UIFontWeightBold];
+        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+        _departureCaptionLabel = label;
+    }
+    
+    return _departureCaptionLabel;
+}
+
 - (PickableLabel*)departureAirportLabel {
     if (_departureAirportLabel == nil) {
         PickableLabel* label = [PickableLabel new];
-        label.text = @"NYC";
+        label.text = @"SLM";
+        label.font = [UIFont systemFontOfSize:24 weight:UIFontWeightBold];
         label.textColor = UIColor.whiteColor;
         [label setUserInteractionEnabled:YES];
         [label setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -51,7 +65,8 @@
 - (PickableLabel*)arrivalAirportLabel {
     if (_arrivalAirportLabel == nil) {
         PickableLabel* label = [PickableLabel new];
-        label.text = @"MOW";
+        label.text = @"BTL";
+        label.font = [UIFont systemFontOfSize:24 weight:UIFontWeightBold];
         label.textColor = UIColor.whiteColor;
         [label setUserInteractionEnabled:YES];
         [label setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -59,6 +74,46 @@
     }
     
     return _arrivalAirportLabel;
+}
+
+- (UILabel *)arrivalCaptionLabel {
+    if (_arrivalCaptionLabel == nil) {
+        UILabel* label = [UILabel new];
+        label.text = @"Прибытие в";
+        label.textColor = [UIColor colorNamed:@"captionColor"];
+        label.font = [UIFont systemFontOfSize:15 weight:UIFontWeightBold];
+        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+        _arrivalCaptionLabel = label;
+    }
+    
+    return _arrivalCaptionLabel;
+}
+
+- (UILabel *)departureCityLabel {
+    if (_departureCityLabel == nil) {
+        UILabel* label = [UILabel new];
+        label.text = @"Sleman, Yogyakarta";
+        label.textColor = UIColor.whiteColor;
+        label.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+        _departureCityLabel = label;
+    }
+    
+    return _departureCityLabel;
+}
+
+
+- (UILabel *)arrivalCityLabel {
+    if (_arrivalCityLabel == nil) {
+        UILabel* label = [UILabel new];
+        label.text = @"Mbantul, Yogyakarta";
+        label.textColor = UIColor.whiteColor;
+        label.font = [UIFont systemFontOfSize:13 weight:UIFontWeightRegular];
+        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+        _arrivalCityLabel = label;
+    }
+    
+    return _arrivalCityLabel;
 }
 
 
@@ -75,10 +130,17 @@
 - (void)setupUI {
     [self addSubview:self.backImageView];
     [self addSubview:self.switchButton];
+    [self addSubview:self.departureCaptionLabel];
+    [self addSubview:self.arrivalCaptionLabel];
     [self addSubview:self.departureAirportLabel];
     [self addSubview:self.arrivalAirportLabel];
     
-    NSLayoutConstraint* bottom = [_backImageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor];
+    [self addSubview:self.departureCityLabel];
+    [self addSubview:self.arrivalCityLabel];
+    
+    self.backImageView.alpha = 0.4;
+    
+    NSLayoutConstraint* bottom = [_backImageView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:80];
     bottom.priority = 1000;
     
     [NSLayoutConstraint activateConstraints:@[
@@ -94,6 +156,20 @@
         
         [_arrivalAirportLabel.centerYAnchor constraintEqualToAnchor:self.switchButton.centerYAnchor constant:64],
         [_arrivalAirportLabel.leftAnchor constraintEqualToAnchor:self.switchButton.rightAnchor constant:16],
+        
+        [_departureCaptionLabel.bottomAnchor constraintEqualToAnchor:self.departureAirportLabel.topAnchor constant:-2],
+        [_departureCaptionLabel.leftAnchor constraintEqualToAnchor:self.switchButton.rightAnchor constant:16],
+        
+        [_arrivalCaptionLabel.bottomAnchor constraintEqualToAnchor:self.arrivalAirportLabel.topAnchor constant:-2],
+        [_arrivalCaptionLabel.leftAnchor constraintEqualToAnchor:self.switchButton.rightAnchor constant:16],
+        
+        [_departureCityLabel.topAnchor constraintEqualToAnchor:self.departureAirportLabel.bottomAnchor constant:2],
+        [_departureCityLabel.leftAnchor constraintEqualToAnchor:self.switchButton.rightAnchor constant:16],
+        
+        [_arrivalCityLabel.topAnchor constraintEqualToAnchor:self.arrivalAirportLabel.bottomAnchor constant:2],
+        [_arrivalCityLabel.leftAnchor constraintEqualToAnchor:self.switchButton.rightAnchor constant:16],
+        
+        
     ]];
     
     __weak SearchControl* _self = self;
@@ -104,8 +180,6 @@
     self.arrivalAirportLabel.didItemSelected = ^(NSString* value){
         _self.arrivalAirportLabel.text = [NSString stringWithFormat:@"%@", value];
     };
-    
-    
     
 }
 

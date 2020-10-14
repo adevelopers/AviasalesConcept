@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nonnull) PickableLabel* departureAirportLabel;
 @property (nonatomic, nonnull) PickableLabel* arrivalAirportLabel;
 
-
+@property (nonatomic, nonnull) UILabel* departureCityLabel;
+@property (nonatomic, nonnull) UILabel* arrivalCityLabel;
 
 @end
 

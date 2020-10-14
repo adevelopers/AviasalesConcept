@@ -60,6 +60,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorNamed:@"bg"];
     self.title = @"Рестораны";
+    self.navigationController.navigationBar.tintColor = UIColor.blackColor;
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
     self.navigationController.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;

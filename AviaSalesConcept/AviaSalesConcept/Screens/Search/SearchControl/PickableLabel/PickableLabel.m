@@ -20,6 +20,7 @@
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
             [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone)]
         ]];
+        [_toolBar setTranslatesAutoresizingMaskIntoConstraints:YES];
         _toolBar = view;
     }
     return _toolBar;
@@ -33,6 +34,7 @@
         UIPickerView *datePicker = [[UIPickerView alloc] init];
         datePicker.dataSource = self;
         datePicker.delegate = self;
+        datePicker.backgroundColor = UIColor.whiteColor;
         
         [self setInputView:datePicker];
         [self setInputAccessoryView: self.toolBar];
@@ -62,7 +64,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -102,7 +104,6 @@
 }
 
 - (void)didTapDone {
-    NSLog(@"Done");
     [self resignFirstResponder];
 }
 

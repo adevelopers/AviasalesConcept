@@ -16,6 +16,7 @@
 		FA27355625365EC300F88529 /* SearchControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27355525365EC300F88529 /* SearchControl.m */; };
 		FA27355A25365F8900F88529 /* SearchControl.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA27355925365F8900F88529 /* SearchControl.xcassets */; };
 		FA27355F2536736500F88529 /* PickableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27355E2536736500F88529 /* PickableLabel.m */; };
+		FA2735672537A49E00F88529 /* SegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2735662537A49E00F88529 /* SegmentControl.m */; };
 		FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7834392531AEA2004AD2B7 /* AppDelegate.m */; };
 		FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78343F2531AEA2004AD2B7 /* MainViewController.m */; };
 		FA7834452531AEA3004AD2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7834442531AEA3004AD2B7 /* Assets.xcassets */; };
@@ -45,6 +46,8 @@
 		FA27355925365F8900F88529 /* SearchControl.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SearchControl.xcassets; sourceTree = "<group>"; };
 		FA27355D2536736500F88529 /* PickableLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickableLabel.h; sourceTree = "<group>"; };
 		FA27355E2536736500F88529 /* PickableLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickableLabel.m; sourceTree = "<group>"; };
+		FA2735652537A49E00F88529 /* SegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SegmentControl.h; sourceTree = "<group>"; };
+		FA2735662537A49E00F88529 /* SegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SegmentControl.m; sourceTree = "<group>"; };
 		FA7834352531AEA2004AD2B7 /* AviaSalesConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaSalesConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7834382531AEA2004AD2B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA7834392531AEA2004AD2B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,9 +126,9 @@
 		FA27355325365E7400F88529 /* SearchControl */ = {
 			isa = PBXGroup;
 			children = (
+				FA2735642537A3C700F88529 /* SegmentControl */,
 				FA27355C2536734000F88529 /* PickableLabel */,
-				FA27355425365EC300F88529 /* SearchControl.h */,
-				FA27355525365EC300F88529 /* SearchControl.m */,
+				FA2735622537A3B300F88529 /* SearchControl */,
 				FA27355925365F8900F88529 /* SearchControl.xcassets */,
 			);
 			path = SearchControl;
@@ -138,6 +141,24 @@
 				FA27355E2536736500F88529 /* PickableLabel.m */,
 			);
 			path = PickableLabel;
+			sourceTree = "<group>";
+		};
+		FA2735622537A3B300F88529 /* SearchControl */ = {
+			isa = PBXGroup;
+			children = (
+				FA27355425365EC300F88529 /* SearchControl.h */,
+				FA27355525365EC300F88529 /* SearchControl.m */,
+			);
+			path = SearchControl;
+			sourceTree = "<group>";
+		};
+		FA2735642537A3C700F88529 /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				FA2735652537A49E00F88529 /* SegmentControl.h */,
+				FA2735662537A49E00F88529 /* SegmentControl.m */,
+			);
+			path = SegmentControl;
 			sourceTree = "<group>";
 		};
 		FA78342C2531AEA2004AD2B7 = {
@@ -347,6 +368,7 @@
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
 				FA27355F2536736500F88529 /* PickableLabel.m in Sources */,
 				FA27355025365BA700F88529 /* SearchViewController.m in Sources */,
+				FA2735672537A49E00F88529 /* SegmentControl.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,
 			);
