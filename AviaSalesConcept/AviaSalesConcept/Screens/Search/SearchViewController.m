@@ -8,6 +8,7 @@
 #import "SearchViewController.h"
 #import "DatePickerCell.h"
 #import "PickerCell.h"
+#import "SearchResultsViewController.h"
 
 
 @interface SearchViewController ()
@@ -57,6 +58,11 @@
         view.dataSource = self;
         view.rowHeight = 60;
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        
+        // Shadow
+        view.layer.borderColor = UIColor.blackColor.CGColor;
+        view.layer.borderWidth = 0.1;
+        
         _tableView = view;
     }
     
@@ -79,12 +85,13 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDarkContent;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setNeedsStatusBarAppearanceUpdate];
     self.view.backgroundColor = [UIColor colorNamed:@"bg"];
     [self.view addSubview:self.searchControl];
     [self.view addSubview:self.segmentControl];
@@ -125,6 +132,10 @@
     ]];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.searchControl.backImageView.image = [UIImage imageNamed:@"search_map"];
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -138,7 +149,8 @@
 }
 
 - (void)didTapSearchFlights {
-    NSLog(@"Найти рейсы");
+    SearchResultsViewController* controller = [[SearchResultsViewController alloc] initWithPresenter: [SearchResultsPresenter new]];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

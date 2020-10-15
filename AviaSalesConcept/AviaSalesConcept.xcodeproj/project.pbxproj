@@ -20,6 +20,10 @@
 		FA27356D2538348B00F88529 /* SearchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27356C2538348B00F88529 /* SearchPresenter.m */; };
 		FA2735722538360500F88529 /* DatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2735712538360500F88529 /* DatePickerCell.m */; };
 		FA273579253856E800F88529 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA273578253856E800F88529 /* PickerCell.m */; };
+		FA2735802538800900F88529 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27357F2538800900F88529 /* SearchResultsViewController.m */; };
+		FA2735852538829200F88529 /* FlightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2735842538829200F88529 /* FlightCell.m */; };
+		FA27358E25388A4700F88529 /* FlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27358D25388A4700F88529 /* FlightModel.m */; };
+		FA27359225388AAD00F88529 /* SearchResultsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA27359125388AAD00F88529 /* SearchResultsPresenter.m */; };
 		FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7834392531AEA2004AD2B7 /* AppDelegate.m */; };
 		FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78343F2531AEA2004AD2B7 /* MainViewController.m */; };
 		FA7834452531AEA3004AD2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7834442531AEA3004AD2B7 /* Assets.xcassets */; };
@@ -58,6 +62,14 @@
 		FA2735752538423D00F88529 /* SearchCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCellModel.h; sourceTree = "<group>"; };
 		FA273577253856E800F88529 /* PickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickerCell.h; sourceTree = "<group>"; };
 		FA273578253856E800F88529 /* PickerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PickerCell.m; sourceTree = "<group>"; };
+		FA27357E2538800900F88529 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		FA27357F2538800900F88529 /* SearchResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		FA2735832538829200F88529 /* FlightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightCell.h; sourceTree = "<group>"; };
+		FA2735842538829200F88529 /* FlightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightCell.m; sourceTree = "<group>"; };
+		FA27358C25388A4700F88529 /* FlightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightModel.h; sourceTree = "<group>"; };
+		FA27358D25388A4700F88529 /* FlightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightModel.m; sourceTree = "<group>"; };
+		FA27359025388AAD00F88529 /* SearchResultsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsPresenter.h; sourceTree = "<group>"; };
+		FA27359125388AAD00F88529 /* SearchResultsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsPresenter.m; sourceTree = "<group>"; };
 		FA7834352531AEA2004AD2B7 /* AviaSalesConcept.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaSalesConcept.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7834382531AEA2004AD2B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA7834392531AEA2004AD2B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -194,6 +206,53 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		FA27357D25387EA800F88529 /* SearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				FA27358B2538899100F88529 /* Model */,
+				FA2735892538890900F88529 /* View */,
+				FA27358A2538891100F88529 /* Presenter */,
+			);
+			path = SearchResults;
+			sourceTree = "<group>";
+		};
+		FA2735872538829F00F88529 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA2735832538829200F88529 /* FlightCell.h */,
+				FA2735842538829200F88529 /* FlightCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA2735892538890900F88529 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA2735872538829F00F88529 /* Cells */,
+				FA27357E2538800900F88529 /* SearchResultsViewController.h */,
+				FA27357F2538800900F88529 /* SearchResultsViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA27358A2538891100F88529 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FA27359025388AAD00F88529 /* SearchResultsPresenter.h */,
+				FA27359125388AAD00F88529 /* SearchResultsPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA27358B2538899100F88529 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA27358C25388A4700F88529 /* FlightModel.h */,
+				FA27358D25388A4700F88529 /* FlightModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA78342C2531AEA2004AD2B7 = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				FA27354C2536591300F88529 /* Search */,
+				FA27357D25387EA800F88529 /* SearchResults */,
 				FA1B3B9925335D520097CBEC /* Restaurants */,
 				FA78345D2533230D004AD2B7 /* Main */,
 				FA783462253324E3004AD2B7 /* Colors.xcassets */,
@@ -396,17 +456,21 @@
 				FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */,
 				FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */,
 				FA9329C825337F09005D6847 /* DataManager.m in Sources */,
+				FA27359225388AAD00F88529 /* SearchResultsPresenter.m in Sources */,
 				FA9329CD25338030005D6847 /* City.m in Sources */,
 				FA1B3B9C25335DA10097CBEC /* RestorantsViewController.m in Sources */,
 				FA2735722538360500F88529 /* DatePickerCell.m in Sources */,
+				FA2735802538800900F88529 /* SearchResultsViewController.m in Sources */,
 				FA9329E52534AC55005D6847 /* Restaurant.m in Sources */,
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
 				FA27355F2536736500F88529 /* PickableLabel.m in Sources */,
 				FA27356D2538348B00F88529 /* SearchPresenter.m in Sources */,
+				FA2735852538829200F88529 /* FlightCell.m in Sources */,
 				FA27355025365BA700F88529 /* SearchViewController.m in Sources */,
 				FA2735672537A49E00F88529 /* SegmentControl.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,
+				FA27358E25388A4700F88529 /* FlightModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +614,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.adeveloper.AviaSalesConcept;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -568,7 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.adeveloper.AviaSalesConcept;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -61,7 +61,9 @@
 - (UIButton*)flightsButton {
     if (_flightsButton == nil) {
         UIButton* button = [UIButton new];
-        [button setImage: [UIImage imageNamed:@"Flight"] forState:UIControlStateNormal];
+        
+        button.tintColor = UIColor.whiteColor;
+        [button setImage:[UIImage imageNamed:@"Flight"] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor colorNamed:@"flights"];
         
         [button setTranslatesAutoresizingMaskIntoConstraints:NO];
