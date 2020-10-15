@@ -14,7 +14,6 @@
 - (UIImageView *)backImageView {
     if (_backImageView == nil) {
         UIImageView* view = [UIImageView new];
-//        view.contentMode = UIViewContentModeScaleAspectFill;
         view.contentMode = UIViewContentModeCenter;
         view.image = [UIImage imageNamed:@"search_map"];
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -148,7 +147,7 @@
         [_backImageView.rightAnchor constraintEqualToAnchor:self.rightAnchor],
         bottom,
         
-        [_switchButton.centerYAnchor constraintEqualToAnchor:self.centerYAnchor],
+        [_switchButton.centerYAnchor constraintEqualToAnchor:self.bottomAnchor constant:-136],
         [_switchButton.leftAnchor constraintEqualToAnchor:self.leftAnchor constant:16],
         
         [_departureAirportLabel.centerYAnchor constraintEqualToAnchor:self.switchButton.centerYAnchor constant:-64],
