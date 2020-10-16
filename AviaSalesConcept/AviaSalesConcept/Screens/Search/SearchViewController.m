@@ -58,7 +58,7 @@
         view.dataSource = self;
         view.rowHeight = 60;
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
-        
+        view.backgroundColor = UIColor.whiteColor;
         // Shadow
         view.layer.borderColor = UIColor.blackColor.CGColor;
         view.layer.borderWidth = 0.1;

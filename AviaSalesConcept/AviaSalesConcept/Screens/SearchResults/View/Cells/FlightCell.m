@@ -34,7 +34,7 @@
 - (CAShapeLayer *)flightLineLayer {
     if (_flightLineLayer == nil) {
         CAShapeLayer* layer = [CAShapeLayer new];
-        layer.strokeColor = UIColor.grayColor.CGColor;
+        layer.strokeColor = [[UIColor colorNamed:@"searchFormCaption"] colorWithAlphaComponent:0.3].CGColor;
         layer.lineWidth = 1;
         layer.lineDashPattern = @[@(8), @(8)];
         _flightLineLayer = layer;

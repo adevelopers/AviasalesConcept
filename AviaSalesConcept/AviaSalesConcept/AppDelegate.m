@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "DataManager.h"
+#import "NavigationController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window = [UIWindow new];
-    [self.window setRootViewController: [[UINavigationController alloc] initWithRootViewController: [MainViewController new]]];
+    [self.window setRootViewController: [[NavigationController alloc] initWithRootViewController: [MainViewController new]]];
     [self.window makeKeyAndVisible];
     
     
