@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "DataManager.h"
+#import "APIManager.h"
 #import "NavigationController.h"
 
 @interface AppDelegate ()
@@ -26,11 +26,12 @@
     [self.window setRootViewController: [[NavigationController alloc] initWithRootViewController: [MainViewController new]]];
     [self.window makeKeyAndVisible];
     
-    
-    [[DataManager shared] loadData];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataLoaded) name:kDataManagerLoadDataDidComplete object:nil];
-    
+    RequestCondition* condition =[RequestCondition new];
+    condition.origin = @"MOW";
+    condition.destination = @"NYC";
+    [[APIManager shared] ticketsWithRequest:condition withCompletion:^(NSArray* tickets) {
+        NSLog(@"%@", tickets);
+    }];
     
     return YES;
 }

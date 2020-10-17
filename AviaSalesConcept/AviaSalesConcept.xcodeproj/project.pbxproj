@@ -38,6 +38,8 @@
 		FA9329DA253383BC005D6847 /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329D9253383BC005D6847 /* Airport.m */; };
 		FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329DE25349578005D6847 /* RestaurantCell.m */; };
 		FA9329E52534AC55005D6847 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329E42534AC55005D6847 /* Restaurant.m */; };
+		FADF8E74253B282B00D96D58 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FADF8E73253B282B00D96D58 /* APIManager.m */; };
+		FADF8E78253B33C000D96D58 /* RequestCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = FADF8E77253B33C000D96D58 /* RequestCondition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,10 @@
 		FA9329E32534AC55005D6847 /* Restaurant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		FA9329E42534AC55005D6847 /* Restaurant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		FA9329E72534AD11005D6847 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		FADF8E72253B282B00D96D58 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		FADF8E73253B282B00D96D58 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		FADF8E76253B33C000D96D58 /* RequestCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCondition.h; sourceTree = "<group>"; };
+		FADF8E77253B33C000D96D58 /* RequestCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCondition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +325,10 @@
 			children = (
 				FA9329C625337F09005D6847 /* DataManager.h */,
 				FA9329C725337F09005D6847 /* DataManager.m */,
+				FADF8E72253B282B00D96D58 /* APIManager.h */,
+				FADF8E73253B282B00D96D58 /* APIManager.m */,
+				FADF8E76253B33C000D96D58 /* RequestCondition.h */,
+				FADF8E77253B33C000D96D58 /* RequestCondition.m */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -457,6 +467,7 @@
 			files = (
 				FA9329D425338342005D6847 /* Country.m in Sources */,
 				FA273579253856E800F88529 /* PickerCell.m in Sources */,
+				FADF8E74253B282B00D96D58 /* APIManager.m in Sources */,
 				FA27355625365EC300F88529 /* SearchControl.m in Sources */,
 				FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */,
 				FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */,
@@ -467,6 +478,7 @@
 				FA2735722538360500F88529 /* DatePickerCell.m in Sources */,
 				FA2735802538800900F88529 /* SearchResultsViewController.m in Sources */,
 				FA9329E52534AC55005D6847 /* Restaurant.m in Sources */,
+				FADF8E78253B33C000D96D58 /* RequestCondition.m in Sources */,
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
 				FA27355F2536736500F88529 /* PickableLabel.m in Sources */,
 				FA27356D2538348B00F88529 /* SearchPresenter.m in Sources */,
