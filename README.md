@@ -7,3 +7,5 @@ Avia Sales Concept
 
 ## Стэк: 
 Язык: Objective-C
+
+<img src="flights.png" width="320" />

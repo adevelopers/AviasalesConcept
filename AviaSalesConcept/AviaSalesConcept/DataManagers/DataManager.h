@@ -6,9 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Country.h"
-#import "City.h"
-#import "Airport.h"
+#import "Models.h"
 
 #define kDataManagerLoadDataDidComplete @"DataManagerLoadDataDidComplete"
 

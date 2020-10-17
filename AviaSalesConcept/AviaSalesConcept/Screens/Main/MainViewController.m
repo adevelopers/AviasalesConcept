@@ -7,6 +7,7 @@
 
 #import "MainViewController.h"
 #import "RestorantsViewController.h"
+#import "SearchViewController.h"
 
 @interface MainViewController ()
 
@@ -57,6 +58,33 @@
 }
 
 
+- (UIButton*)flightsButton {
+    if (_flightsButton == nil) {
+        UIButton* button = [UIButton new];
+        
+        button.tintColor = UIColor.whiteColor;
+        [button setImage:[UIImage imageNamed:@"Flight"] forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor colorNamed:@"flights"];
+        
+        [button setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [button addTarget:self action:@selector(didTapSearch) forControlEvents: UIControlEventTouchUpInside];
+        
+        // Shadow
+        button.layer.cornerRadius = 16;
+        button.layer.masksToBounds = NO;
+        button.layer.shadowOffset = CGSizeMake(0, 5);
+        button.layer.shadowRadius = 5;
+        button.layer.shadowOpacity = 0.5;
+        button.layer.shadowColor = [UIColor colorNamed:@"flights"].CGColor;
+        
+        //
+        _flightsButton = button;
+    }
+    
+    return  _flightsButton;
+}
+
+
 - (UIButton*)restorantsButton {
     if (_restorantsButton == nil) {
         UIButton* button = [UIButton new];
@@ -90,6 +118,7 @@
     [self.view addSubview: self.userAvatarView];
     [self.view addSubview: self.userSubtitleLabel];
     [self.view addSubview: self.restorantsButton];
+    [self.view addSubview: self.flightsButton];
     
     
     
@@ -118,6 +147,11 @@
         [self.restorantsButton.widthAnchor constraintEqualToConstant:60],
         [self.restorantsButton.heightAnchor constraintEqualToConstant:60],
         
+        [self.flightsButton.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
+        [self.flightsButton.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:64],
+        [self.flightsButton.widthAnchor constraintEqualToConstant:60],
+        [self.flightsButton.heightAnchor constraintEqualToConstant:60],
+        
     ]];
     
     NSLog(@"didLoad");
@@ -142,10 +176,13 @@
 
 - (void) didTap {
     NSLog(@"did tap");
-
     RestorantsViewController* controller = [RestorantsViewController new];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void) didTapSearch {
+    SearchViewController* controller = [SearchViewController new];
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 @end

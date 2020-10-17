@@ -13,8 +13,8 @@
 @property (nonatomic) UIImageView* userAvatarView;
 @property (nonatomic) UILabel* userSubtitleLabel;
 
+@property (nonatomic) UIButton* flightsButton;
 @property (nonatomic) UIButton* restorantsButton;
-
 
 @end
 
