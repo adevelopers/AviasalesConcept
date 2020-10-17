@@ -184,14 +184,14 @@
         case kSearchCellModel_Passenger: {
             PickerCell* cell = (PickerCell*)[tableView dequeueReusableCellWithIdentifier: PickerCell.reuseId];
             if (cell) {
-                [cell setupIcon:[UIImage imageNamed:@"passenger"] andCaption:@"Passenger" andValue:@"1 Adult 0 child 0 infant"];
+                [cell setupIcon:[UIImage imageNamed:@"passenger"] andCaption:@"Пассажиры" andValue:@"1 Взрослый 0 детский "];
                 return cell;
             }
         }
         case kSearchCellModel_Class: {
             PickerCell* cell = (PickerCell*)[tableView dequeueReusableCellWithIdentifier: PickerCell.reuseId];
             if (cell) {
-                [cell setupIcon:[UIImage imageNamed:@"passengerClass"] andCaption:@"Class" andValue:@"Business"];
+                [cell setupIcon:[UIImage imageNamed:@"passengerClass"] andCaption:@"Класс" andValue:@"Бизнес"];
                 return cell;
             }
         }

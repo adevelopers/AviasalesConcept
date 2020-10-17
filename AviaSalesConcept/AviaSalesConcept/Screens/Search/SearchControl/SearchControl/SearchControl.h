@@ -12,8 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SearchControl : UIControl
 
-@property (nonatomic, nonnull) UIImageView* backImageView;
+// TODO: Вынести SwitchControl в отдельную компоненту
 @property (nonatomic, nonnull) UIButton* switchButton;
+@property (nonatomic, nonnull) CAShapeLayer* highDot;
+@property (nonatomic, nonnull) CAShapeLayer* lowerDot;
+@property (nonatomic, nonnull) CAShapeLayer* highLine;
+@property (nonatomic, nonnull) CAShapeLayer* lowerLine;
+// End of Switch Control
+
+@property (nonatomic, nonnull) UIImageView* backImageView;
+
 
 @property (nonatomic, nonnull) UILabel* departureCaptionLabel;
 @property (nonatomic, nonnull) UILabel* arrivalCaptionLabel;

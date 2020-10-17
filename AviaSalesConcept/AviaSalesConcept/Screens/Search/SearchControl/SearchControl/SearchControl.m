@@ -10,6 +10,53 @@
 
 @implementation SearchControl
 
+// MARK: SwitchControl
+- (CAShapeLayer *)highDot {
+    if (_highDot == nil) {
+        CAShapeLayer* layer = [CAShapeLayer new];
+        layer.strokeColor = UIColor.whiteColor.CGColor;
+        layer.fillColor = UIColor.whiteColor.CGColor;
+        layer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 7, 7)].CGPath;
+        _highDot = layer;
+    }
+    return _highDot;
+}
+
+- (CAShapeLayer *)lowerDot {
+    if (_lowerDot == nil) {
+        CAShapeLayer* layer = [CAShapeLayer new];
+        layer.strokeColor = UIColor.whiteColor.CGColor;
+        layer.fillColor = UIColor.whiteColor.CGColor;
+        layer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 7, 7)].CGPath;
+        _lowerDot = layer;
+    }
+    return _lowerDot;
+}
+
+
+- (CAShapeLayer *)highLine {
+    if (_highLine == nil) {
+        CAShapeLayer* layer = [CAShapeLayer new];
+        layer.strokeColor = UIColor.whiteColor.CGColor;
+        layer.lineWidth = 1;
+        layer.lineCap = kCALineCapRound;
+        _highLine = layer;
+    }
+    return _highLine;
+}
+
+- (CAShapeLayer *)lowerLine {
+    if (_lowerLine == nil) {
+        CAShapeLayer* layer = [CAShapeLayer new];
+        layer.strokeColor = UIColor.whiteColor.CGColor;
+        layer.lineWidth = 1;
+        layer.lineCap = kCALineCapRound;
+        _lowerLine = layer;
+    }
+    return _lowerLine;
+}
+// End of SwitchControl
+
 
 - (UIImageView *)backImageView {
     if (_backImageView == nil) {
@@ -179,6 +226,30 @@
     self.arrivalAirportLabel.didItemSelected = ^(NSString* value){
         _self.arrivalAirportLabel.text = [NSString stringWithFormat:@"%@", value];
     };
+    
+    [self setupSwitchControl];
+}
+
+- (void)setupSwitchControl {
+    [self.layer addSublayer:self.highLine];
+    [self.layer addSublayer:self.lowerLine];
+    [self.layer addSublayer:self.highDot];
+    [self.layer addSublayer:self.lowerDot];
+    
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGFloat height = 24;
+    NSLog(@"%.2f", self.switchButton.center.y);
+    self.highLine.path = [UIBezierPath bezierPathWithRect:CGRectMake(self.switchButton.center.x,
+                                                                     self.switchButton.center.y - height - 24, 1, height)].CGPath;
+    
+    self.lowerLine.path = [UIBezierPath bezierPathWithRect:CGRectMake(self.switchButton.center.x,
+                                                                     self.switchButton.center.y + 24, 1, height)].CGPath;
+    
+    self.highDot.position = CGPointMake(self.switchButton.center.x - 3,  self.switchButton.center.y - height - (32+8));
+    self.lowerDot.position = CGPointMake(self.switchButton.center.x - 3,  self.switchButton.center.y + height + (32));
     
 }
 
