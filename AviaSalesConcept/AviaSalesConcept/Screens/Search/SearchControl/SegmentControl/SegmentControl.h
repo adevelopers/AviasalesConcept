@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SegmentControl : UIControl
 
+@property (copy) NSArray<UIButton*>* buttons;
+
+@property (nonatomic, nonnull) UIButton* selectedButton;
+
 @end
 
 NS_ASSUME_NONNULL_END
