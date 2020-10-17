@@ -14,10 +14,11 @@
     if (_selectedButton == nil) {
         UIButton* button = [UIButton new];
         button.backgroundColor = [UIColor colorNamed:@"selectedSegment"];
-        [button setTitle:@"в одну сторону" forState:UIControlStateNormal];
+        [button setTitle:@"В одну сторону" forState:UIControlStateNormal];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         [button setTranslatesAutoresizingMaskIntoConstraints:NO];
         button.contentEdgeInsets = UIEdgeInsetsMake(4, 16, 4, 16);
+        button.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightBold];
         _selectedButton = button;
     }
     
@@ -60,8 +61,6 @@
     self.layer.cornerRadius = self.bounds.size.height / 2;
     
     self.selectedButton.layer.cornerRadius = self.selectedButton.bounds.size.height / 2;
-    
 }
-
 
 @end
