@@ -7,19 +7,25 @@
 
 #import "PickableLabel.h"
 
-@implementation PickableLabel
 
+@implementation PickableLabel
 
 - (UIToolbar*)toolBar {
     if (_toolBar == nil) {
         UIToolbar* view = [UIToolbar new];
         view.barStyle = UIBarStyleDefault;
         view.tintColor = UIColor.blackColor;
+        view.backgroundColor = UIColor.whiteColor;
+        view.barTintColor = UIColor.whiteColor;
+        view.delegate = self;
+        
+//        UIToolbar.appearance.barStyle = UIBarStyleBlack;
         
         [view setItems:@[
             [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
             [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone)]
         ]];
+        
         [_toolBar setTranslatesAutoresizingMaskIntoConstraints:YES];
         _toolBar = view;
     }
@@ -35,6 +41,8 @@
         datePicker.dataSource = self;
         datePicker.delegate = self;
         datePicker.backgroundColor = UIColor.whiteColor;
+        datePicker.tintColor = UIColor.blackColor;
+        datePicker.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
         
         [self setInputView:datePicker];
         [self setInputAccessoryView: self.toolBar];
@@ -64,7 +72,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 4;
+    return items.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -76,35 +84,26 @@
 }
 
 - (NSString*)getTitle:(NSInteger)row {
-    switch (row) {
-        case 0:
-            return @"NYC";
-            break;
-        case 1:
-            return @"DEL";
-            break;
-        case 2:
-            return @"BOM";
-            break;
-        case 3:
-            return @"MOW";
-            break;
-        default:
-            return @"";
-            break;
+    NSString* value = items[row];
+    if (value) {
+        return value;
+    } else {
+        return @"";
     }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"%ld", (long)row);
-    
     NSString* value = [self getTitle:row];
     self.didItemSelected(value);
-
 }
+
 
 - (void)didTapDone {
     [self resignFirstResponder];
+}
+
+- (void)setItems:(NSArray<NSString*>*)array {
+    items = array;
 }
 
 @end
