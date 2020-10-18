@@ -9,6 +9,7 @@
 #import "DatePickerCell.h"
 #import "PickerCell.h"
 #import "SearchResultsViewController.h"
+#import "DataManager.h"
 
 
 @interface SearchViewController ()
@@ -130,6 +131,8 @@
         [_searchButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
         [_searchButton.heightAnchor constraintEqualToConstant:57],
     ]];
+    
+    [self loadAirports];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -145,7 +148,17 @@
 }
 
 - (void)loadAirports {
-    
+    SearchViewController* _self = self;
+    __block NSMutableArray<NSString*>* airportTitles = [NSMutableArray new];
+    [[DataManager shared] loadAirportsWithCompletion:^(NSArray<Airport*>* airports) {
+        for (Airport* airport in airports) {
+            NSString* airportCode = [airport valueForKey:@"code"];
+            if (airport != nil) {
+                [airportTitles addObject:airportCode];
+            }
+        }
+        [_self.searchControl setAirports:airportTitles];
+    }];
 }
 
 - (void)didTapSearchFlights {

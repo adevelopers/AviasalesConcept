@@ -22,14 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DataManager: NSObject
 
+@property (nonatomic, readonly) NSArray* countries;
+@property (nonatomic, readonly) NSArray* cities;
+@property (nonatomic, readonly) NSArray* airports;
+
+
 + (instancetype)shared;
 - (void)loadData;
 - (City*)cityForIATA:(NSString*) iata;
+- (void) loadAirportsWithCompletion:(void (^)(NSArray<Airport*>* airports))completion;
 
-@property (nonatomic, strong, readonly) NSArray* countries;
-@property (nonatomic, strong, readonly) NSArray* cities;
-@property (nonatomic, strong, readonly) NSArray* airports;
-
-NS_ASSUME_NONNULL_END
 
 @end
+
+NS_ASSUME_NONNULL_END

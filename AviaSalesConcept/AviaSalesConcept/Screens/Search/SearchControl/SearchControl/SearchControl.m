@@ -6,6 +6,8 @@
 //
 
 #import "SearchControl.h"
+#import "Models.h"
+#import "DataManager.h"
 
 
 @implementation SearchControl
@@ -173,6 +175,11 @@
     return self;
 }
 
+-(void)setAirports:(NSArray<NSString*>*)airports {
+    [_departureAirportLabel setItems:airports];
+    [_arrivalAirportLabel setItems:airports];
+}
+
 - (void)setupUI {
     [self addSubview:self.backImageView];
     [self addSubview:self.switchButton];
@@ -221,13 +228,31 @@
     __weak SearchControl* _self = self;
     self.departureAirportLabel.didItemSelected = ^(NSString* value){
         _self.departureAirportLabel.text = [NSString stringWithFormat:@"%@", value];
+        
+        Airport* item = getAirportByCode(value);
+        _self.departureCityLabel.text = getCityByCode(item.cityCode).name;
     };
     
     self.arrivalAirportLabel.didItemSelected = ^(NSString* value){
         _self.arrivalAirportLabel.text = [NSString stringWithFormat:@"%@", value];
+        
+        Airport* item = getAirportByCode(value);
+        _self.arrivalCityLabel.text = getCityByCode(item.cityCode).name;
     };
     
     [self setupSwitchControl];
+}
+
+City* getCityByCode(NSString* code) {
+    City* city =[[DataManager shared].cities filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"SELF.code == %@", code]].firstObject;
+    return city;
+}
+
+Airport* getAirportByCode(NSString* code) {
+    
+    Airport* item = [[DataManager shared].airports filteredArrayUsingPredicate: [NSPredicate predicateWithFormat:@"SELF.code == %@", code]].firstObject;
+    NSLog(@"ariport %@ -> %@ , %@",code, item.name, getCityByCode(item.cityCode).name);
+    return item;
 }
 
 - (void)setupSwitchControl {

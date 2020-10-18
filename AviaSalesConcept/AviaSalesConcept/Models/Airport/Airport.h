@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSDictionary* translations;
 @property (nonatomic, strong) NSString* countryCode;
 @property (nonatomic, strong) NSString* cityCode;
-@property (nonatomic, strong) NSString* code;
+@property (nullable, strong) NSString* code;
 @property (nonatomic, getter = isFlightable) BOOL flightable;
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 
-- (instancetype) initWithDictionary:( NSDictionary* )dictionary;
+- (instancetype) initWithDictionary:(NSDictionary*)dictionary;
 
 NS_ASSUME_NONNULL_END
 @end

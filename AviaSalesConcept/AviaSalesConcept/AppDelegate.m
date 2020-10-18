@@ -25,13 +25,15 @@
     self.window = [UIWindow new];
     [self.window setRootViewController: [[NavigationController alloc] initWithRootViewController: [MainViewController new]]];
     [self.window makeKeyAndVisible];
+  
     
-    RequestCondition* condition =[RequestCondition new];
-    condition.origin = @"MOW";
-    condition.destination = @"NYC";
-    [[APIManager shared] ticketsWithRequest:condition withCompletion:^(NSArray* tickets) {
-        NSLog(@"%@", tickets);
-    }];
+    [[DataManager shared] loadData];
+//    RequestCondition* condition =[RequestCondition new];
+//    condition.origin = @"MOW";
+//    condition.destination = @"NYC";
+//    [[APIManager shared] ticketsWithRequest:condition withCompletion:^(NSArray* tickets) {
+//        NSLog(@"%@", tickets);
+//    }];
     
     return YES;
 }

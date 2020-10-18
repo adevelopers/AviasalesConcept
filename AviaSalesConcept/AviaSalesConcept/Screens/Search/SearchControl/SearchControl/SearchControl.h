@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nonnull) UILabel* departureCityLabel;
 @property (nonatomic, nonnull) UILabel* arrivalCityLabel;
 
+-(void)setAirports:(NSArray<NSString*>*)airports;
+
 @end
 
 NS_ASSUME_NONNULL_END

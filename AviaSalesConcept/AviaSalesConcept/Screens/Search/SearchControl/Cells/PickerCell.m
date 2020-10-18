@@ -60,6 +60,7 @@
 
 - (void)setupUI {
     self.backgroundColor = UIColor.whiteColor;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [self addSubview:self.iconImageView];
     [self addSubview:self.captionLabel];

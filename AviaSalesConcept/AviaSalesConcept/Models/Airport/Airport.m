@@ -8,14 +8,15 @@
 #import "Airport.h"
 
 @implementation Airport
-- (instancetype) initWithDictionary:( NSDictionary * ) dictionary {
+- (instancetype) initWithDictionary:(NSDictionary*) dictionary {
     self = [super init];
+    
     if (self) {
         _timezone  = [dictionary valueForKey: @"time_zone"];
         _translations  = [dictionary valueForKey:@"name_translations"];
         _name  = [dictionary  valueForKey: @"name"];
         _countryCode  = [dictionary valueForKey: @"country_code"];
-        _cityCode  = [ dictionary valueForKey: @"city_code"];
+        _cityCode  = [dictionary valueForKey: @"city_code"];
         _code  = [dictionary valueForKey: @"code"];
         _flightable  = [dictionary valueForKey: @"flightable"];
         NSDictionary * coords = [ dictionary valueForKey: @"coordinates"];
@@ -30,6 +31,7 @@
     }
     return self;
 }
+
 - (void)localizeName {
     if (!_translations) return;
     NSLocale *locale = [NSLocale currentLocale];
@@ -40,4 +42,9 @@
         }
     }
 }
+
+//- (NSString *)getCode {
+//    return [self valueForKey:@"code"];
+//}
+
 @end

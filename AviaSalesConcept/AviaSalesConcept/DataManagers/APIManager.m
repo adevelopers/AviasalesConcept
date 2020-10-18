@@ -80,9 +80,14 @@
     NSURL *url = [[NSURL alloc] initWithString:urlString];
     
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        dispatch_async (dispatch_get_main_queue(), ^{ [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible :NO] ;});
-        completion([NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil]);
+        
+        if (error == nil) {
+            dispatch_async (dispatch_get_main_queue(), ^{ [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible :NO] ;});
+            completion([NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil]);
+            
+        }
     }];
+    
     
     [task resume];
 
