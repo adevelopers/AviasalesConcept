@@ -60,7 +60,7 @@
 
 - (UIButton*)flightsButton {
     if (_flightsButton == nil) {
-        UIButton* button = [UIButton new];
+        UIButton* button = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
         
         button.tintColor = UIColor.whiteColor;
         [button setImage:[UIImage imageNamed:@"Flight"] forState:UIControlStateNormal];
@@ -87,7 +87,7 @@
 
 - (UIButton*)restorantsButton {
     if (_restorantsButton == nil) {
-        UIButton* button = [UIButton new];
+        UIButton* button = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
         [button setImage: [UIImage imageNamed:@"resto"] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor colorNamed:@"resto"];
         
@@ -109,6 +109,22 @@
     return  _restorantsButton;
 }
 
+- (UIStackView *)servicesStackView {
+    if (_servicesStackView == nil) {
+        UIStackView* stackView = [UIStackView new];
+        stackView.alignment = UIStackViewAlignmentFill;
+        stackView.distribution = UIStackViewDistributionEqualSpacing;
+        stackView.spacing = 0;
+        [stackView addArrangedSubview:self.flightsButton];
+        [stackView addArrangedSubview:self.restorantsButton];
+        stackView.backgroundColor = UIColor.clearColor;
+        [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        _servicesStackView = stackView;
+    }
+    
+    return _servicesStackView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -117,10 +133,7 @@
     [self.view addSubview: self.userNameLabel];
     [self.view addSubview: self.userAvatarView];
     [self.view addSubview: self.userSubtitleLabel];
-    [self.view addSubview: self.restorantsButton];
-    [self.view addSubview: self.flightsButton];
-    
-    
+    [self.view addSubview: self.servicesStackView];
     
     NSLayoutConstraint* userAvatarRight = [self.userAvatarView.rightAnchor constraintEqualToAnchor: self.view.rightAnchor constant:-16];
     userAvatarRight.priority = 1000;
@@ -142,16 +155,15 @@
         [self.userSubtitleLabel.leftAnchor constraintEqualToAnchor: self.view.leftAnchor constant:16],
         userSubtitleRightToAvatarLeft,
         
-        [self.restorantsButton.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
-        [self.restorantsButton.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-        [self.restorantsButton.widthAnchor constraintEqualToConstant:60],
-        [self.restorantsButton.heightAnchor constraintEqualToConstant:60],
+        [self.servicesStackView.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
+        [self.servicesStackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+        [self.servicesStackView.widthAnchor constraintEqualToConstant:(60*2)+32],
+        [self.servicesStackView.heightAnchor constraintEqualToConstant:65],
         
-        [self.flightsButton.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
-        [self.flightsButton.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:64],
-        [self.flightsButton.widthAnchor constraintEqualToConstant:60],
         [self.flightsButton.heightAnchor constraintEqualToConstant:60],
-        
+        [self.flightsButton.widthAnchor constraintEqualToConstant:60],
+        [self.restorantsButton.heightAnchor constraintEqualToConstant:60],
+        [self.restorantsButton.widthAnchor constraintEqualToConstant:60]
     ]];
     
     NSLog(@"didLoad");

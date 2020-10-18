@@ -16,5 +16,7 @@
 @property (nonatomic) UIButton* flightsButton;
 @property (nonatomic) UIButton* restorantsButton;
 
+@property (nonatomic) UIStackView* servicesStackView;
+
 @end
 
