@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainFlow.h"
 
 
 
-@interface MainViewController : UIViewController<UITableViewDataSource>
+@interface MainViewController : UIViewController<UITableViewDataSource, MainFlow>
 
 @property (nonatomic) UITableView* tableView;
 

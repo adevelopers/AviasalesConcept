@@ -28,6 +28,7 @@
         UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout: self.layout];
         [collectionView registerClass:[NewsItemCell class] forCellWithReuseIdentifier: NewsItemCell.reuseId];
         collectionView.dataSource = self;
+        collectionView.delegate = self;
         collectionView.backgroundColor = UIColor.grayColor;
         collectionView.showsHorizontalScrollIndicator = NO;
         [collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -90,4 +91,15 @@
     return [UICollectionViewCell new];
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NewsItem* model = self.items[indexPath.row];
+    NSLog(@"model %@", model.title);
+    [self.flow showNewsDetail:model];
+}
+
 @end
+
+

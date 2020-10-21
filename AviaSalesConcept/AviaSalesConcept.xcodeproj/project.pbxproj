@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,6 +49,7 @@
 		FAE5F6962540420100A69F31 /* NewsService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6952540420100A69F31 /* NewsService.m */; };
 		FAE5F69B25408C3100A69F31 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F69A25408C3100A69F31 /* NewsItem.m */; };
 		FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */; };
+		FAE5F6AE2540CF4600A69F31 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,9 @@
 		FAE5F69A25408C3100A69F31 /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		FAE5F69F2540AB3D00A69F31 /* NewsItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItemCell.h; sourceTree = "<group>"; };
 		FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItemCell.m; sourceTree = "<group>"; };
+		FAE5F6AC2540CF4600A69F31 /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		FAE5F6B32540D7FB00A69F31 /* MainFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFlow.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,6 @@
 				767166AAD2450DCAA1B07EE5 /* Pods-AviaSalesConcept.debug.xcconfig */,
 				3237967F6273EDC744F8A3A5 /* Pods-AviaSalesConcept.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,13 +164,6 @@
 				E375D50B4B98F9878216637C /* Pods_AviaSalesConcept.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FA1B3B9725334FF90097CBEC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FA1B3B9925335D520097CBEC /* Restaurants */ = {
@@ -351,6 +347,7 @@
 				FA27357D25387EA800F88529 /* SearchResults */,
 				FA1B3B9925335D520097CBEC /* Restaurants */,
 				FA78345D2533230D004AD2B7 /* Main */,
+				FAE5F6AA2540CE4300A69F31 /* News */,
 				FA783462253324E3004AD2B7 /* Colors.xcassets */,
 				FA2735A12539ECC600F88529 /* NavigationController.h */,
 				FA2735A22539ECC600F88529 /* NavigationController.m */,
@@ -361,9 +358,9 @@
 		FA78345D2533230D004AD2B7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FAE5F6B22540D7CD00A69F31 /* Protocols */,
 				FAE5F653253F1ABB00A69F31 /* Cells */,
 				FAE5F646253F0AF700A69F31 /* News */,
-				FA1B3B9725334FF90097CBEC /* Views */,
 				FA78343E2531AEA2004AD2B7 /* MainViewController.h */,
 				FA78343F2531AEA2004AD2B7 /* MainViewController.m */,
 				FA78345F25332320004AD2B7 /* Main.xcassets */,
@@ -535,6 +532,31 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		FAE5F6AA2540CE4300A69F31 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F6AB2540CF2600A69F31 /* Detail */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FAE5F6AB2540CF2600A69F31 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F6AC2540CF4600A69F31 /* NewsDetailViewController.h */,
+				FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FAE5F6B22540D7CD00A69F31 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F6B32540D7FB00A69F31 /* MainFlow.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -655,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9329D425338342005D6847 /* Country.m in Sources */,
+				FAE5F6AE2540CF4600A69F31 /* NewsDetailViewController.m in Sources */,
 				FA273579253856E800F88529 /* PickerCell.m in Sources */,
 				FADF8E74253B282B00D96D58 /* APIManager.m in Sources */,
 				FA27355625365EC300F88529 /* SearchControl.m in Sources */,

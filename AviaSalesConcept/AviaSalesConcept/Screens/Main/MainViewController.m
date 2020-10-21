@@ -11,7 +11,7 @@
 #import "ProfileCell.h"
 #import "ServiceCell.h"
 #import "NewsCell.h"
-
+#import "NewsDetailViewController.h"
 
 
 #define MAIN_SECTION_PROFILE  1
@@ -20,10 +20,7 @@
 
 
 @interface MainViewController ()
-
 @property (nonatomic) NSArray<NSNumber*>* sections;
-
-
 @end
 
 @implementation MainViewController
@@ -132,6 +129,7 @@
             NewsCell* cell = [tableView dequeueReusableCellWithIdentifier:NewsCell.reuseId];
             cell.autoresizingMask = UIViewAutoresizingFlexibleHeight && UIViewAutoresizingFlexibleWidth;
             if (cell) {
+                cell.newsView.flow = self;
                 return cell;
             }
         } break;
@@ -156,6 +154,16 @@
 }
 
 
+#pragma mark - MainFlow
+
+- (void)showNewsDetail:(NewsItem *)item {
+    NewsDetailViewController* controller = [NewsDetailViewController new];
+    [controller setup:item];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 @end
+
+
 
 
