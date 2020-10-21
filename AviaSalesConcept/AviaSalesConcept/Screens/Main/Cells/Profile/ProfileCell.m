@@ -64,6 +64,7 @@
 }
 
 - (void)setupUI {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = UIColor.clearColor;
     
     [self.contentView addSubview:self.userNameLabel];

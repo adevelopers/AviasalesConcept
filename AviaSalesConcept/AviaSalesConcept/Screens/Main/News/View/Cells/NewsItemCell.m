@@ -58,7 +58,6 @@
 }
 
 - (void)setupUI {
-    printf("🌕 NewsItemCell setupUI");
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.titleLabel];
     self.contentView.layer.cornerRadius = 4;
