@@ -31,7 +31,7 @@
     
     if (_collectionView == nil) {
         UICollectionView* view = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout: self.layout];
-        [view registerClass:NSClassFromString(@"RestaurantCell") forCellWithReuseIdentifier:@"cell"];
+        [view registerClass:[RestaurantCell class] forCellWithReuseIdentifier:@"cell"];
         view.dataSource = self;
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
         _collectionView = view;

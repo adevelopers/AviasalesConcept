@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1477B96D136B2FFF138E0C55 /* Pods_AviaSalesConcept.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E375D50B4B98F9878216637C /* Pods_AviaSalesConcept.framework */; };
 		FA1B3B9C25335DA10097CBEC /* RestorantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1B3B9B25335DA10097CBEC /* RestorantsViewController.m */; };
 		FA1B3BA1253372820097CBEC /* Restaurants.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1B3BA0253372820097CBEC /* Restaurants.xcassets */; };
 		FA1B3BA6253375F20097CBEC /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = FA1B3BA3253375F20097CBEC /* cities.json */; };
@@ -40,9 +41,20 @@
 		FA9329E52534AC55005D6847 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9329E42534AC55005D6847 /* Restaurant.m */; };
 		FADF8E74253B282B00D96D58 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FADF8E73253B282B00D96D58 /* APIManager.m */; };
 		FADF8E78253B33C000D96D58 /* RequestCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = FADF8E77253B33C000D96D58 /* RequestCondition.m */; };
+		FAE5F649253F0C9900A69F31 /* NewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F648253F0C9900A69F31 /* NewsView.m */; };
+		FAE5F64F253F10A700A69F31 /* NewsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F64E253F10A700A69F31 /* NewsPresenter.m */; };
+		FAE5F686253F4A9400A69F31 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F685253F4A9400A69F31 /* ProfileCell.m */; };
+		FAE5F68D253F9E1300A69F31 /* ServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F68C253F9E1300A69F31 /* ServiceCell.m */; };
+		FAE5F692253FA93C00A69F31 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F691253FA93C00A69F31 /* NewsCell.m */; };
+		FAE5F6962540420100A69F31 /* NewsService.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6952540420100A69F31 /* NewsService.m */; };
+		FAE5F69B25408C3100A69F31 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F69A25408C3100A69F31 /* NewsItem.m */; };
+		FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3237967F6273EDC744F8A3A5 /* Pods-AviaSalesConcept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaSalesConcept.release.xcconfig"; path = "Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept.release.xcconfig"; sourceTree = "<group>"; };
+		767166AAD2450DCAA1B07EE5 /* Pods-AviaSalesConcept.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaSalesConcept.debug.xcconfig"; path = "Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept.debug.xcconfig"; sourceTree = "<group>"; };
+		E375D50B4B98F9878216637C /* Pods_AviaSalesConcept.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AviaSalesConcept.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1B3B9A25335DA10097CBEC /* RestorantsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RestorantsViewController.h; sourceTree = "<group>"; };
 		FA1B3B9B25335DA10097CBEC /* RestorantsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestorantsViewController.m; sourceTree = "<group>"; };
 		FA1B3BA0253372820097CBEC /* Restaurants.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Restaurants.xcassets; sourceTree = "<group>"; };
@@ -103,6 +115,22 @@
 		FADF8E73253B282B00D96D58 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		FADF8E76253B33C000D96D58 /* RequestCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestCondition.h; sourceTree = "<group>"; };
 		FADF8E77253B33C000D96D58 /* RequestCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestCondition.m; sourceTree = "<group>"; };
+		FAE5F647253F0C9900A69F31 /* NewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsView.h; sourceTree = "<group>"; };
+		FAE5F648253F0C9900A69F31 /* NewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsView.m; sourceTree = "<group>"; };
+		FAE5F64D253F10A700A69F31 /* NewsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsPresenter.h; sourceTree = "<group>"; };
+		FAE5F64E253F10A700A69F31 /* NewsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsPresenter.m; sourceTree = "<group>"; };
+		FAE5F684253F4A9400A69F31 /* ProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		FAE5F685253F4A9400A69F31 /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		FAE5F68B253F9E1300A69F31 /* ServiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceCell.h; sourceTree = "<group>"; };
+		FAE5F68C253F9E1300A69F31 /* ServiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceCell.m; sourceTree = "<group>"; };
+		FAE5F690253FA93C00A69F31 /* NewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		FAE5F691253FA93C00A69F31 /* NewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		FAE5F6942540420100A69F31 /* NewsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsService.h; sourceTree = "<group>"; };
+		FAE5F6952540420100A69F31 /* NewsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsService.m; sourceTree = "<group>"; };
+		FAE5F69925408C3100A69F31 /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
+		FAE5F69A25408C3100A69F31 /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
+		FAE5F69F2540AB3D00A69F31 /* NewsItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItemCell.h; sourceTree = "<group>"; };
+		FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItemCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +138,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1477B96D136B2FFF138E0C55 /* Pods_AviaSalesConcept.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DAF851485AEC57B9BE25B32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				767166AAD2450DCAA1B07EE5 /* Pods-AviaSalesConcept.debug.xcconfig */,
+				3237967F6273EDC744F8A3A5 /* Pods-AviaSalesConcept.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2143F030504B04AFE2FE5D70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E375D50B4B98F9878216637C /* Pods_AviaSalesConcept.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA1B3B9725334FF90097CBEC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +314,8 @@
 			children = (
 				FA7834372531AEA2004AD2B7 /* AviaSalesConcept */,
 				FA7834362531AEA2004AD2B7 /* Products */,
+				1DAF851485AEC57B9BE25B32 /* Pods */,
+				2143F030504B04AFE2FE5D70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +361,8 @@
 		FA78345D2533230D004AD2B7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FAE5F653253F1ABB00A69F31 /* Cells */,
+				FAE5F646253F0AF700A69F31 /* News */,
 				FA1B3B9725334FF90097CBEC /* Views */,
 				FA78343E2531AEA2004AD2B7 /* MainViewController.h */,
 				FA78343F2531AEA2004AD2B7 /* MainViewController.m */,
@@ -390,6 +441,100 @@
 			path = Restaurant;
 			sourceTree = "<group>";
 		};
+		FAE5F646253F0AF700A69F31 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F652253F10D600A69F31 /* Data */,
+				FAE5F64C253F0F3E00A69F31 /* Presenter */,
+				FAE5F64B253F0DD300A69F31 /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FAE5F64B253F0DD300A69F31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F69E2540AB1B00A69F31 /* Cells */,
+				FAE5F647253F0C9900A69F31 /* NewsView.h */,
+				FAE5F648253F0C9900A69F31 /* NewsView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAE5F64C253F0F3E00A69F31 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F64D253F10A700A69F31 /* NewsPresenter.h */,
+				FAE5F64E253F10A700A69F31 /* NewsPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAE5F652253F10D600A69F31 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F69825408A8000A69F31 /* NewsItem */,
+				FAE5F6942540420100A69F31 /* NewsService.h */,
+				FAE5F6952540420100A69F31 /* NewsService.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FAE5F653253F1ABB00A69F31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F68F253FA92500A69F31 /* News */,
+				FAE5F68A253F9DF000A69F31 /* Services */,
+				FAE5F688253F9B6600A69F31 /* Profile */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FAE5F688253F9B6600A69F31 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F684253F4A9400A69F31 /* ProfileCell.h */,
+				FAE5F685253F4A9400A69F31 /* ProfileCell.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FAE5F68A253F9DF000A69F31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F68B253F9E1300A69F31 /* ServiceCell.h */,
+				FAE5F68C253F9E1300A69F31 /* ServiceCell.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAE5F68F253FA92500A69F31 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F690253FA93C00A69F31 /* NewsCell.h */,
+				FAE5F691253FA93C00A69F31 /* NewsCell.m */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		FAE5F69825408A8000A69F31 /* NewsItem */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F69925408C3100A69F31 /* NewsItem.h */,
+				FAE5F69A25408C3100A69F31 /* NewsItem.m */,
+			);
+			path = NewsItem;
+			sourceTree = "<group>";
+		};
+		FAE5F69E2540AB1B00A69F31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F69F2540AB3D00A69F31 /* NewsItemCell.h */,
+				FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,9 +542,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA78344E2531AEA3004AD2B7 /* Build configuration list for PBXNativeTarget "AviaSalesConcept" */;
 			buildPhases = (
+				AA9B57B8AC533B2F8D4007D0 /* [CP] Check Pods Manifest.lock */,
 				FA7834312531AEA2004AD2B7 /* Sources */,
 				FA7834322531AEA2004AD2B7 /* Frameworks */,
 				FA7834332531AEA2004AD2B7 /* Resources */,
+				8ACF83337E53519F603F1DE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,6 +607,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8ACF83337E53519F603F1DE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA9B57B8AC533B2F8D4007D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AviaSalesConcept-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA7834312531AEA2004AD2B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -481,10 +670,18 @@
 				FADF8E78253B33C000D96D58 /* RequestCondition.m in Sources */,
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
 				FA27355F2536736500F88529 /* PickableLabel.m in Sources */,
+				FAE5F69B25408C3100A69F31 /* NewsItem.m in Sources */,
 				FA27356D2538348B00F88529 /* SearchPresenter.m in Sources */,
 				FA2735852538829200F88529 /* FlightCell.m in Sources */,
+				FAE5F649253F0C9900A69F31 /* NewsView.m in Sources */,
+				FAE5F686253F4A9400A69F31 /* ProfileCell.m in Sources */,
+				FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */,
+				FAE5F64F253F10A700A69F31 /* NewsPresenter.m in Sources */,
+				FAE5F68D253F9E1300A69F31 /* ServiceCell.m in Sources */,
+				FAE5F6962540420100A69F31 /* NewsService.m in Sources */,
 				FA27355025365BA700F88529 /* SearchViewController.m in Sources */,
 				FA2735672537A49E00F88529 /* SegmentControl.m in Sources */,
+				FAE5F692253FA93C00A69F31 /* NewsCell.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
 				FA2735A32539ECC600F88529 /* NavigationController.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,
@@ -620,6 +817,7 @@
 		};
 		FA78344F2531AEA3004AD2B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 767166AAD2450DCAA1B07EE5 /* Pods-AviaSalesConcept.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -639,6 +837,7 @@
 		};
 		FA7834502531AEA3004AD2B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3237967F6273EDC744F8A3A5 /* Pods-AviaSalesConcept.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

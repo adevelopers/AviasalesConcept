@@ -28,7 +28,6 @@
 }
 
 - (SearchControl*)searchControl {
-    
     if (_searchControl == nil) {
         SearchControl* control = [SearchControl new];
         [control setTranslatesAutoresizingMaskIntoConstraints:NO];
