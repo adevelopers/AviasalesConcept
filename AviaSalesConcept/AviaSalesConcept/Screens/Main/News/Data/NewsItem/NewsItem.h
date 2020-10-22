@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NewsItem : NSObject
 
 @property (nonatomic, strong) NSString* title;
-@property (nonatomic, strong) NSString* content;
-@property (nonatomic, strong) NSString* urlToImage;
+@property (nonatomic, nullable, copy) NSString* content;
+@property (nonatomic, nullable, copy) NSString* urlToImage;
 @property (nonatomic, strong) NSString* publishedAt;
 
 

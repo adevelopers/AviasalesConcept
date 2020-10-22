@@ -78,9 +78,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NewsItemCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:NewsItemCell.reuseId forIndexPath: indexPath];
-    
     NewsItem* model = self.items[indexPath.row];
-    
     if (cell) {
         cell.backgroundColor = UIColor.whiteColor;
         cell.titleLabel.text = model.title;
