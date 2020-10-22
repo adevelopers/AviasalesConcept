@@ -7,6 +7,8 @@
 
 #import "NewsService.h"
 
+#define NEWS_HOST "https://newsapi.org"
+#define NEWS_TOKEN "669f5074a8fa42b4b93a347f39f4e595"
 
 @implementation NewsService
 
@@ -21,8 +23,12 @@
 
 - (void)loadFeed:(void (^)(NSArray<NewsItem*>*))completion {
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
-
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://newsapi.org/v2/everything?q=bitcoin&from=2020-09-21&sortBy=publishedAt&apiKey=669f5074a8fa42b4b93a347f39f4e595"]
+    NSString* linkToFeed = [NSString stringWithFormat:@"%s/v2/everything?q=%@&from=2020-10-21&sortBy=publishedAt&apiKey=%s",
+                            NEWS_HOST,
+                            @"flights",
+                            NEWS_TOKEN];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:linkToFeed]
       cachePolicy:NSURLRequestUseProtocolCachePolicy
       timeoutInterval:10.0];
     NSDictionary *headers = @{
