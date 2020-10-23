@@ -6,6 +6,7 @@
 //
 
 #import "DatePickerCell.h"
+#import "DateHelper.h"
 
 @implementation DatePickerCell
 
@@ -49,6 +50,27 @@
     return _valueLabel;
 }
 
+- (UIToolbar*)toolBar {
+    if (_toolBar == nil) {
+        UIToolbar* view = [UIToolbar new];
+        view.barStyle = UIBarStyleDefault;
+        view.tintColor = UIColor.blackColor;
+        view.backgroundColor = UIColor.whiteColor;
+        view.barTintColor = UIColor.whiteColor;
+        view.delegate = self;
+        
+        [view setItems:@[
+            [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+            [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStyleDone target:self action:@selector(didTapDone)]
+        ]];
+        
+        [_toolBar setTranslatesAutoresizingMaskIntoConstraints:YES];
+        _toolBar = view;
+    }
+    return _toolBar;
+}
+
+
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -74,9 +96,28 @@
         
         [_valueLabel.topAnchor constraintEqualToAnchor:self.captionLabel.bottomAnchor constant:5],
         [_valueLabel.leftAnchor constraintEqualToAnchor:self.iconImageView.rightAnchor constant:20],
-        
-        
     ]];
+    
+    [self setupDatePicker];
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(launchPicker:)];
+    [self addGestureRecognizer:tapper];
+}
+
+- (void)setupDatePicker {
+    
+    UIDatePicker *datePicker = [UIDatePicker new];
+    datePicker.datePickerMode = UIDatePickerModeDate;
+    [datePicker setPreferredDatePickerStyle: UIDatePickerStyleCompact];
+    datePicker.backgroundColor = UIColor.whiteColor;
+    datePicker.tintColor = UIColor.blackColor;
+    datePicker.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    [datePicker setLocale: [[NSLocale alloc] initWithLocaleIdentifier:@"ru-RU"]];
+    [datePicker setMinimumDate: [NSDate now]];
+    [datePicker addTarget:self action:@selector(didTapDone) forControlEvents: UIControlEventValueChanged];
+    
+    [self setInputView:datePicker];
+    [self setInputAccessoryView: self.toolBar];
 }
 
 - (void)setupCaption:(NSString*)caption andValue:(NSString*)value {
@@ -85,5 +126,35 @@
     self.valueLabel.text = value;
     
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self.toolBar sizeToFit];
+}
+
+- (BOOL)isUserInteractionEnabled {
+    return YES;
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)launchPicker:(UITapGestureRecognizer *) tapper {
+    [self becomeFirstResponder];
+}
+
+- (void)didTapDone {
+    NSDate* selectedDate = ((UIDatePicker*)self.inputView).date;
+    
+    if (selectedDate && self.didItemSelected) {
+        self.didItemSelected(selectedDate);
+        NSString* dateString = [[DateHelper dateFormatter] stringFromDate:selectedDate];
+        self.valueLabel.text = dateString;
+        NSLog(@"selected Date: %@", dateString);
+    }
+    [self resignFirstResponder];
+}
+
 
 @end

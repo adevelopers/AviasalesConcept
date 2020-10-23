@@ -50,6 +50,7 @@
 		FAE5F69B25408C3100A69F31 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F69A25408C3100A69F31 /* NewsItem.m */; };
 		FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */; };
 		FAE5F6AE2540CF4600A69F31 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */; };
+		FAE5F6D725437B0100A69F31 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6D625437B0100A69F31 /* DateHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,8 @@
 		FAE5F6AC2540CF4600A69F31 /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		FAE5F6B32540D7FB00A69F31 /* MainFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFlow.h; sourceTree = "<group>"; };
+		FAE5F6D525437B0100A69F31 /* DateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
+		FAE5F6D625437B0100A69F31 /* DateHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +339,8 @@
 				FA7834462531AEA3004AD2B7 /* LaunchScreen.storyboard */,
 				FA7834492531AEA3004AD2B7 /* Info.plist */,
 				FA78344A2531AEA3004AD2B7 /* main.m */,
+				FAE5F6D525437B0100A69F31 /* DateHelper.h */,
+				FAE5F6D625437B0100A69F31 /* DateHelper.m */,
 			);
 			path = AviaSalesConcept;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				FAE5F649253F0C9900A69F31 /* NewsView.m in Sources */,
 				FAE5F686253F4A9400A69F31 /* ProfileCell.m in Sources */,
 				FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */,
+				FAE5F6D725437B0100A69F31 /* DateHelper.m in Sources */,
 				FAE5F64F253F10A700A69F31 /* NewsPresenter.m in Sources */,
 				FAE5F68D253F9E1300A69F31 /* ServiceCell.m in Sources */,
 				FAE5F6962540420100A69F31 /* NewsService.m in Sources */,

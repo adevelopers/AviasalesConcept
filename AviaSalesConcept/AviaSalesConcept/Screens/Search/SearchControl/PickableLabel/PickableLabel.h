@@ -11,9 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PickableLabel : UILabel<UIPickerViewDataSource, UIPickerViewDelegate, UIToolbarDelegate>  {
     NSArray<NSString*>* items;
-    
 }
-
 
 @property (readonly) NSArray<NSString*>* filteredItems;
 @property (nonatomic) UIView *inputView;
@@ -21,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) UIToolbar* toolBar;
 
 @property (nonatomic) UITextView* filterText;
-
 @property (nonatomic) void (^didItemSelected)(NSString*);
 
 - (NSString*)getTitle:(NSInteger)row;
