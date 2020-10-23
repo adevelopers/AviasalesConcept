@@ -6,17 +6,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainFlow.h"
 
-@interface MainViewController : UIViewController
 
-@property (nonatomic) UILabel* userNameLabel;
-@property (nonatomic) UIImageView* userAvatarView;
-@property (nonatomic) UILabel* userSubtitleLabel;
 
-@property (nonatomic) UIButton* flightsButton;
-@property (nonatomic) UIButton* restorantsButton;
+@interface MainViewController : UIViewController<UITableViewDataSource, MainFlow>
 
-@property (nonatomic) UIStackView* servicesStackView;
+@property (nonatomic) UITableView* tableView;
 
 @end
 
+@interface MainViewController(TableView)<UITableViewDelegate>
+
+@end

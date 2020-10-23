@@ -28,7 +28,6 @@
 }
 
 - (SearchControl*)searchControl {
-    
     if (_searchControl == nil) {
         SearchControl* control = [SearchControl new];
         [control setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -54,12 +53,13 @@
         UITableView* view = [[UITableView alloc] initWithFrame:CGRectZero style: UITableViewStylePlain];
         view.layer.cornerRadius = 4;
         view.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [view registerClass:NSClassFromString(@"DatePickerCell") forCellReuseIdentifier:DatePickerCell.reuseId];
-        [view registerClass:NSClassFromString(@"PickerCell") forCellReuseIdentifier:PickerCell.reuseId];
+        [view registerClass: [DatePickerCell class] forCellReuseIdentifier:DatePickerCell.reuseId];
+        [view registerClass: [PickerCell class] forCellReuseIdentifier:PickerCell.reuseId];
         view.dataSource = self;
         view.rowHeight = 60;
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
         view.backgroundColor = UIColor.whiteColor;
+        
         // Shadow
         view.layer.borderColor = UIColor.blackColor.CGColor;
         view.layer.borderWidth = 0.1;
@@ -184,6 +184,9 @@
             DatePickerCell* cell = (DatePickerCell*)[tableView dequeueReusableCellWithIdentifier: DatePickerCell.reuseId];
             if (cell) {
                 [cell setupCaption:@"Дата отлёта" andValue:@"12 октября"];
+                cell.didItemSelected = ^(NSDate* selectedDate){
+                    
+                };
                 return cell;
             }
         }
@@ -191,6 +194,9 @@
             DatePickerCell* cell = (DatePickerCell*)[tableView dequeueReusableCellWithIdentifier: DatePickerCell.reuseId];
             if (cell) {
                 [cell setupCaption:@"Дата прилёта" andValue:@"13 октября"];
+                cell.didItemSelected = ^(NSDate* selectedDate){
+                    
+                };
                 return cell;
             }
         }

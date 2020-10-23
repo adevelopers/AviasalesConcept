@@ -23,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window = [UIWindow new];
+    self.window.backgroundColor = UIColor.whiteColor;
     [self.window setRootViewController: [[NavigationController alloc] initWithRootViewController: [MainViewController new]]];
     [self.window makeKeyAndVisible];
   

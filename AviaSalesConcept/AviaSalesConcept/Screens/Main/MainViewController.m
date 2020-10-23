@@ -8,166 +8,65 @@
 #import "MainViewController.h"
 #import "RestorantsViewController.h"
 #import "SearchViewController.h"
+#import "ProfileCell.h"
+#import "ServiceCell.h"
+#import "NewsCell.h"
+#import "NewsDetailViewController.h"
+
+
+#define MAIN_SECTION_PROFILE  1
+#define MAIN_SECTION_SERVICES  2
+#define MAIN_SECTION_NEWS  3
+
 
 @interface MainViewController ()
-
+@property (nonatomic) NSArray<NSNumber*>* sections;
 @end
 
 @implementation MainViewController
 
+- (UITableView *)tableView {
+    if (_tableView == nil) {
+        UITableView* tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        tableView.dataSource = self;
+        tableView.delegate = self;
 
-- (UILabel*)userNameLabel {
-    if (_userNameLabel == nil) {
-        UILabel* label = [UILabel new];
-        label.text = @"Ivone";
-        label.font = [UIFont systemFontOfSize:24 weight: UIFontWeightBold];
-        label.textColor = [UIColor colorNamed:@"textPrimary"];
-        label.backgroundColor = UIColor.clearColor;
-        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _userNameLabel = label;
-    }
-    return _userNameLabel;
-}
-
-- (UIImageView*)userAvatarView {
-    
-    if (_userAvatarView == nil) {
-        UIImageView* view = [UIImageView new];
-        view.contentMode = UIViewContentModeScaleAspectFit;
-        view.image = [UIImage imageNamed:@"ava1"];
-        view.layer.cornerRadius = 30;
-        view.layer.masksToBounds = true;
-        
-        [view setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _userAvatarView = view;
-    }
-    return _userAvatarView;
-}
-
-- (UILabel*)userSubtitleLabel {
-    if (_userSubtitleLabel == nil) {
-        UILabel* label = [UILabel new];
-        label.textColor = [UIColor colorNamed:@"textSecond"];
-        label.text = @"Лето, время взять билет и махнуть на пляж ";
-        label.numberOfLines = 0;
-        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _userSubtitleLabel = label;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [tableView registerClass:[ProfileCell class] forCellReuseIdentifier: ProfileCell.reuseId];
+        [tableView registerClass:[ServiceCell class] forCellReuseIdentifier:ServiceCell.reuseId];
+        [tableView registerClass:[NewsCell class] forCellReuseIdentifier:NewsCell.reuseId];
+        _tableView = tableView;
     }
     
-    return  _userSubtitleLabel;
+    return _tableView;
 }
 
-
-- (UIButton*)flightsButton {
-    if (_flightsButton == nil) {
-        UIButton* button = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
-        
-        button.tintColor = UIColor.whiteColor;
-        [button setImage:[UIImage imageNamed:@"Flight"] forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor colorNamed:@"flights"];
-        
-        [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [button addTarget:self action:@selector(didTapSearch) forControlEvents: UIControlEventTouchUpInside];
-        
-        // Shadow
-        button.layer.cornerRadius = 16;
-        button.layer.masksToBounds = NO;
-        button.layer.shadowOffset = CGSizeMake(0, 5);
-        button.layer.shadowRadius = 5;
-        button.layer.shadowOpacity = 0.5;
-        button.layer.shadowColor = [UIColor colorNamed:@"flights"].CGColor;
-        
-        //
-        _flightsButton = button;
-    }
-    
-    return  _flightsButton;
-}
-
-
-- (UIButton*)restorantsButton {
-    if (_restorantsButton == nil) {
-        UIButton* button = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 60, 60)];
-        [button setImage: [UIImage imageNamed:@"resto"] forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor colorNamed:@"resto"];
-        
-        [button setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [button addTarget:self action:@selector(didTap) forControlEvents: UIControlEventTouchUpInside];
-        
-        // Shadow
-        button.layer.cornerRadius = 16;
-        button.layer.masksToBounds = NO;
-        button.layer.shadowOffset = CGSizeMake(0, 5);
-        button.layer.shadowRadius = 5;
-        button.layer.shadowOpacity = 0.5;
-        button.layer.shadowColor = [UIColor colorNamed:@"resto"].CGColor;
-        
-        //
-        _restorantsButton = button;
-    }
-    
-    return  _restorantsButton;
-}
-
-- (UIStackView *)servicesStackView {
-    if (_servicesStackView == nil) {
-        UIStackView* stackView = [UIStackView new];
-        stackView.alignment = UIStackViewAlignmentFill;
-        stackView.distribution = UIStackViewDistributionEqualSpacing;
-        stackView.spacing = 0;
-        [stackView addArrangedSubview:self.flightsButton];
-        [stackView addArrangedSubview:self.restorantsButton];
-        stackView.backgroundColor = UIColor.clearColor;
-        [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _servicesStackView = stackView;
-    }
-    
-    return _servicesStackView;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationController.navigationBar.tintColor = UIColor.blackColor;
     self.view.backgroundColor = [UIColor colorNamed:@"bg"];
-    [self.view addSubview: self.userNameLabel];
-    [self.view addSubview: self.userAvatarView];
-    [self.view addSubview: self.userSubtitleLabel];
-    [self.view addSubview: self.servicesStackView];
-    
-    NSLayoutConstraint* userAvatarRight = [self.userAvatarView.rightAnchor constraintEqualToAnchor: self.view.rightAnchor constant:-16];
-    userAvatarRight.priority = 1000;
-    NSLayoutConstraint* userSubtitleRightToAvatarLeft = [self.userSubtitleLabel.rightAnchor constraintEqualToAnchor: self.userAvatarView.leftAnchor constant:-8];
-    userSubtitleRightToAvatarLeft.priority = 999;
+    [self.view addSubview:self.tableView];
     
     [NSLayoutConstraint activateConstraints:@[
-        [self.userNameLabel.leftAnchor constraintEqualToAnchor: self.view.leftAnchor constant:16],
-        [self.userNameLabel.rightAnchor constraintEqualToAnchor: self.view.rightAnchor constant:16],
-        [self.userNameLabel.topAnchor constraintEqualToAnchor: self.view.safeAreaLayoutGuide.topAnchor constant:16],
-        [self.userNameLabel.heightAnchor constraintEqualToConstant:30],
-        
-        userAvatarRight,
-        [self.userAvatarView.topAnchor constraintEqualToAnchor: self.view.safeAreaLayoutGuide.topAnchor constant:16],
-        [self.userAvatarView.widthAnchor constraintEqualToConstant:60],
-        [self.userAvatarView.heightAnchor constraintEqualToConstant:60],
-        
-        [self.userSubtitleLabel.topAnchor constraintEqualToAnchor: self.userNameLabel.bottomAnchor constant:0],
-        [self.userSubtitleLabel.leftAnchor constraintEqualToAnchor: self.view.leftAnchor constant:16],
-        userSubtitleRightToAvatarLeft,
-        
-        [self.servicesStackView.topAnchor constraintEqualToAnchor: self.userSubtitleLabel.bottomAnchor constant:48],
-        [self.servicesStackView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-        [self.servicesStackView.widthAnchor constraintEqualToConstant:(60*2)+32],
-        [self.servicesStackView.heightAnchor constraintEqualToConstant:65],
-        
-        [self.flightsButton.heightAnchor constraintEqualToConstant:60],
-        [self.flightsButton.widthAnchor constraintEqualToConstant:60],
-        [self.restorantsButton.heightAnchor constraintEqualToConstant:60],
-        [self.restorantsButton.widthAnchor constraintEqualToConstant:60]
+        [self.tableView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:0],
+        [self.tableView.leftAnchor constraintEqualToAnchor: self.view.leftAnchor],
+        [self.tableView.rightAnchor constraintEqualToAnchor: self.view.rightAnchor],
+        [self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
     ]];
     
-    NSLog(@"didLoad");
+    [self loadData];
+}
+
+- (void)loadData {
+    self.sections = @[
+        @(MAIN_SECTION_PROFILE),
+        @(MAIN_SECTION_SERVICES),
+        @(MAIN_SECTION_NEWS)
+    ];
     
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -183,7 +82,6 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    _restorantsButton.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect: _restorantsButton.bounds cornerRadius:16].CGPath;
 }
 
 - (void) didTap {
@@ -193,8 +91,79 @@
 }
 
 - (void) didTapSearch {
+    NSLog(@"did tap search");
     SearchViewController* controller = [SearchViewController new];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.sections.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (self.sections[indexPath.row].intValue) {
+        case MAIN_SECTION_PROFILE: {
+            ProfileCell* cell = [tableView dequeueReusableCellWithIdentifier:ProfileCell.reuseId];
+            if (cell) {
+                return cell;
+            }
+        } break;
+        case MAIN_SECTION_SERVICES: {
+            ServiceCell* cell = [tableView dequeueReusableCellWithIdentifier:ServiceCell.reuseId];
+            if (cell) {
+                [cell setupButtons:self
+                               and:@selector(didTapSearch)
+                               and:@selector(didTap)];
+                return cell;
+            }
+        } break;
+        case MAIN_SECTION_NEWS: {
+            NewsCell* cell = [tableView dequeueReusableCellWithIdentifier:NewsCell.reuseId];
+            cell.autoresizingMask = UIViewAutoresizingFlexibleHeight && UIViewAutoresizingFlexibleWidth;
+            if (cell) {
+                cell.newsView.flow = self;
+                return cell;
+            }
+        } break;
+        default:
+            break;
+    }
+    
+    return [UITableViewCell new];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (self.sections[indexPath.row].intValue) {
+        case MAIN_SECTION_PROFILE:
+            return 120;
+        case MAIN_SECTION_SERVICES:
+            return 70;
+        case MAIN_SECTION_NEWS:
+            return 238;
+        default:
+            return 0;
+    }
+}
+
+
+#pragma mark - MainFlow
+
+- (void)showNewsDetail:(NewsItem *)item {
+    NewsDetailViewController* controller = [NewsDetailViewController new];
+    [controller setup:item];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 @end
+
+
+
+
