@@ -7,12 +7,12 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "MapViewController.h"
 #import "APIManager.h"
 #import "NavigationController.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
-
-
 
 @end
 
@@ -24,20 +24,40 @@
 
     self.window = [UIWindow new];
     self.window.backgroundColor = UIColor.whiteColor;
-    [self.window setRootViewController: [[NavigationController alloc] initWithRootViewController: [MainViewController new]]];
-    [self.window makeKeyAndVisible];
-  
+    
+    [self assemblyModules];
+    
     
     [[DataManager shared] loadData];
-//    RequestCondition* condition =[RequestCondition new];
-//    condition.origin = @"MOW";
-//    condition.destination = @"NYC";
-//    [[APIManager shared] ticketsWithRequest:condition withCompletion:^(NSArray* tickets) {
-//        NSLog(@"%@", tickets);
-//    }];
     
     return YES;
 }
+
+- (void)assemblyModules {
+    [self setupTabBarAppearance];
+    TabBarController* tabbarController = [TabBarController new];
+    
+    UIViewController* mainFlowController = [[NavigationController alloc] initWithRootViewController: [MainViewController new]];
+    mainFlowController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"Home"] tag:1];
+    
+    UIViewController* mapFlowController = [[NavigationController alloc] initWithRootViewController:[MapViewController new]];
+    mapFlowController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage systemImageNamed:@"globe"] tag:2];
+    
+    [tabbarController setViewControllers:@[
+        mainFlowController,
+        mapFlowController
+    ]];
+    
+    [self.window setRootViewController: tabbarController];
+    [self.window makeKeyAndVisible];
+  
+}
+
+- (void)setupTabBarAppearance {
+    [UITabBar appearance].tintColor = [UIColor colorNamed:@"tabBarItemSelected"];
+    [UITabBar appearance].unselectedItemTintColor = [UIColor colorNamed:@"tabBarItem"];
+}
+
 
 - (void)handleDataLoaded {
     NSLog(@"✈️ Airports: %lu", (unsigned long)[DataManager shared].airports.count);

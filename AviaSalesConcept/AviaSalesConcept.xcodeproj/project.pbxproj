@@ -51,6 +51,10 @@
 		FAE5F6A12540AB3D00A69F31 /* NewsItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6A02540AB3D00A69F31 /* NewsItemCell.m */; };
 		FAE5F6AE2540CF4600A69F31 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6AD2540CF4600A69F31 /* NewsDetailViewController.m */; };
 		FAE5F6D725437B0100A69F31 /* DateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6D625437B0100A69F31 /* DateHelper.m */; };
+		FAE5F6E125438CF300A69F31 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6E025438CF300A69F31 /* TabBarController.m */; };
+		FAE5F6EC2545B97A00A69F31 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6EB2545B97A00A69F31 /* MapViewController.m */; };
+		FAE5F6F32545F5F500A69F31 /* MapViewController+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6F22545F5F500A69F31 /* MapViewController+MapKit.m */; };
+		FAE5F6F92545FA0700A69F31 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +142,14 @@
 		FAE5F6B32540D7FB00A69F31 /* MainFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainFlow.h; sourceTree = "<group>"; };
 		FAE5F6D525437B0100A69F31 /* DateHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateHelper.h; sourceTree = "<group>"; };
 		FAE5F6D625437B0100A69F31 /* DateHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateHelper.m; sourceTree = "<group>"; };
+		FAE5F6DF25438CF300A69F31 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		FAE5F6E025438CF300A69F31 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		FAE5F6EA2545B97A00A69F31 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		FAE5F6EB2545B97A00A69F31 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FAE5F6F12545F5F500A69F31 /* MapViewController+MapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapViewController+MapKit.h"; sourceTree = "<group>"; };
+		FAE5F6F22545F5F500A69F31 /* MapViewController+MapKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+MapKit.m"; sourceTree = "<group>"; };
+		FAE5F6F72545FA0700A69F31 /* CustomAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,9 +365,12 @@
 				FA1B3B9925335D520097CBEC /* Restaurants */,
 				FA78345D2533230D004AD2B7 /* Main */,
 				FAE5F6AA2540CE4300A69F31 /* News */,
+				FAE5F6E92545B88E00A69F31 /* Map */,
 				FA783462253324E3004AD2B7 /* Colors.xcassets */,
 				FA2735A12539ECC600F88529 /* NavigationController.h */,
 				FA2735A22539ECC600F88529 /* NavigationController.m */,
+				FAE5F6DF25438CF300A69F31 /* TabBarController.h */,
+				FAE5F6E025438CF300A69F31 /* TabBarController.m */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -562,6 +577,27 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		FAE5F6E92545B88E00A69F31 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F6F62545F9E200A69F31 /* Annotation */,
+				FAE5F6EA2545B97A00A69F31 /* MapViewController.h */,
+				FAE5F6EB2545B97A00A69F31 /* MapViewController.m */,
+				FAE5F6F12545F5F500A69F31 /* MapViewController+MapKit.h */,
+				FAE5F6F22545F5F500A69F31 /* MapViewController+MapKit.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		FAE5F6F62545F9E200A69F31 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				FAE5F6F72545FA0700A69F31 /* CustomAnnotationView.h */,
+				FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -684,10 +720,12 @@
 				FA9329D425338342005D6847 /* Country.m in Sources */,
 				FAE5F6AE2540CF4600A69F31 /* NewsDetailViewController.m in Sources */,
 				FA273579253856E800F88529 /* PickerCell.m in Sources */,
+				FAE5F6EC2545B97A00A69F31 /* MapViewController.m in Sources */,
 				FADF8E74253B282B00D96D58 /* APIManager.m in Sources */,
 				FA27355625365EC300F88529 /* SearchControl.m in Sources */,
 				FA7834402531AEA2004AD2B7 /* MainViewController.m in Sources */,
 				FA9329DF25349578005D6847 /* RestaurantCell.m in Sources */,
+				FAE5F6E125438CF300A69F31 /* TabBarController.m in Sources */,
 				FA9329C825337F09005D6847 /* DataManager.m in Sources */,
 				FA27359225388AAD00F88529 /* SearchResultsPresenter.m in Sources */,
 				FA9329CD25338030005D6847 /* City.m in Sources */,
@@ -697,6 +735,7 @@
 				FA9329E52534AC55005D6847 /* Restaurant.m in Sources */,
 				FADF8E78253B33C000D96D58 /* RequestCondition.m in Sources */,
 				FA9329DA253383BC005D6847 /* Airport.m in Sources */,
+				FAE5F6F92545FA0700A69F31 /* CustomAnnotationView.m in Sources */,
 				FA27355F2536736500F88529 /* PickableLabel.m in Sources */,
 				FAE5F69B25408C3100A69F31 /* NewsItem.m in Sources */,
 				FA27356D2538348B00F88529 /* SearchPresenter.m in Sources */,
@@ -712,6 +751,7 @@
 				FA2735672537A49E00F88529 /* SegmentControl.m in Sources */,
 				FAE5F692253FA93C00A69F31 /* NewsCell.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
+				FAE5F6F32545F5F500A69F31 /* MapViewController+MapKit.m in Sources */,
 				FA2735A32539ECC600F88529 /* NavigationController.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,
 				FA27358E25388A4700F88529 /* FlightModel.m in Sources */,
