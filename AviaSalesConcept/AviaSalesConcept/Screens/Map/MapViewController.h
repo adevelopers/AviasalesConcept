@@ -11,9 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<CLLocationManagerDelegate>
 
-
+- (void)addressFromLocation:(CLLocation *)location;
 
 @end
 
