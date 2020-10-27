@@ -66,7 +66,11 @@
     
     CLLocation* location = [[CLLocation alloc] initWithLatitude:58.592725 longitude:16.185962];
     [[GeoCoder shared] addressFromLocation:location andCompletion:^(NSArray * _Nonnull places) {
-        NSLog(@"places: %@", places);
+        NSString* cityName = ((CLPlacemark*)places.firstObject).name;
+        NSLog(@"places: %@", cityName);
+        if (cityName) {
+            self.title = cityName;
+        }
     }];
 }
 
