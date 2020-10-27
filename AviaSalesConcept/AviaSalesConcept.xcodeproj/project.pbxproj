@@ -55,7 +55,19 @@
 		FAE5F6EC2545B97A00A69F31 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6EB2545B97A00A69F31 /* MapViewController.m */; };
 		FAE5F6F32545F5F500A69F31 /* MapViewController+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6F22545F5F500A69F31 /* MapViewController+MapKit.m */; };
 		FAE5F6F92545FA0700A69F31 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */; };
+		FAF5D8EE254843890073339E /* GeoCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5D8ED254843880073339E /* GeoCoder.m */; };
+		FAF5D8F8254845C10073339E /* AviaSalesConceptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF5D8F7254845C10073339E /* AviaSalesConceptTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAF5D8FA254845C10073339E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA78342D2531AEA2004AD2B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA7834342531AEA2004AD2B7;
+			remoteInfo = AviaSalesConcept;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3237967F6273EDC744F8A3A5 /* Pods-AviaSalesConcept.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AviaSalesConcept.release.xcconfig"; path = "Target Support Files/Pods-AviaSalesConcept/Pods-AviaSalesConcept.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +162,11 @@
 		FAE5F6F22545F5F500A69F31 /* MapViewController+MapKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MapViewController+MapKit.m"; sourceTree = "<group>"; };
 		FAE5F6F72545FA0700A69F31 /* CustomAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
 		FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		FAF5D8EC254843880073339E /* GeoCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoCoder.h; sourceTree = "<group>"; };
+		FAF5D8ED254843880073339E /* GeoCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoCoder.m; sourceTree = "<group>"; };
+		FAF5D8F5254845C10073339E /* AviaSalesConceptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AviaSalesConceptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF5D8F7254845C10073339E /* AviaSalesConceptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AviaSalesConceptTests.m; sourceTree = "<group>"; };
+		FAF5D8F9254845C10073339E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +175,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1477B96D136B2FFF138E0C55 /* Pods_AviaSalesConcept.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF5D8F2254845C10073339E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7834372531AEA2004AD2B7 /* AviaSalesConcept */,
+				FAF5D8F6254845C10073339E /* AviaSalesConceptTests */,
 				FA7834362531AEA2004AD2B7 /* Products */,
 				1DAF851485AEC57B9BE25B32 /* Pods */,
 				2143F030504B04AFE2FE5D70 /* Frameworks */,
@@ -334,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7834352531AEA2004AD2B7 /* AviaSalesConcept.app */,
+				FAF5D8F5254845C10073339E /* AviaSalesConceptTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -580,6 +606,7 @@
 		FAE5F6E92545B88E00A69F31 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				FAF5D8EB254843660073339E /* Services */,
 				FAE5F6F62545F9E200A69F31 /* Annotation */,
 				FAE5F6EA2545B97A00A69F31 /* MapViewController.h */,
 				FAE5F6EB2545B97A00A69F31 /* MapViewController.m */,
@@ -596,6 +623,24 @@
 				FAE5F6F82545FA0700A69F31 /* CustomAnnotationView.m */,
 			);
 			path = Annotation;
+			sourceTree = "<group>";
+		};
+		FAF5D8EB254843660073339E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5D8EC254843880073339E /* GeoCoder.h */,
+				FAF5D8ED254843880073339E /* GeoCoder.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAF5D8F6254845C10073339E /* AviaSalesConceptTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5D8F7254845C10073339E /* AviaSalesConceptTests.m */,
+				FAF5D8F9254845C10073339E /* Info.plist */,
+			);
+			path = AviaSalesConceptTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -620,6 +665,24 @@
 			productReference = FA7834352531AEA2004AD2B7 /* AviaSalesConcept.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAF5D8F4254845C10073339E /* AviaSalesConceptTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF5D8FC254845C10073339E /* Build configuration list for PBXNativeTarget "AviaSalesConceptTests" */;
+			buildPhases = (
+				FAF5D8F1254845C10073339E /* Sources */,
+				FAF5D8F2254845C10073339E /* Frameworks */,
+				FAF5D8F3254845C10073339E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAF5D8FB254845C10073339E /* PBXTargetDependency */,
+			);
+			name = AviaSalesConceptTests;
+			productName = AviaSalesConceptTests;
+			productReference = FAF5D8F5254845C10073339E /* AviaSalesConceptTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -630,6 +693,10 @@
 				TargetAttributes = {
 					FA7834342531AEA2004AD2B7 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					FAF5D8F4254845C10073339E = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = FA7834342531AEA2004AD2B7;
 					};
 				};
 			};
@@ -647,6 +714,7 @@
 			projectRoot = "";
 			targets = (
 				FA7834342531AEA2004AD2B7 /* AviaSalesConcept */,
+				FAF5D8F4254845C10073339E /* AviaSalesConceptTests */,
 			);
 		};
 /* End PBXProject section */
@@ -665,6 +733,13 @@
 				FA78346025332320004AD2B7 /* Main.xcassets in Resources */,
 				FA1B3BA7253375F20097CBEC /* countries.json in Resources */,
 				FA7834452531AEA3004AD2B7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF5D8F3254845C10073339E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,13 +827,30 @@
 				FAE5F692253FA93C00A69F31 /* NewsCell.m in Sources */,
 				FA78343A2531AEA2004AD2B7 /* AppDelegate.m in Sources */,
 				FAE5F6F32545F5F500A69F31 /* MapViewController+MapKit.m in Sources */,
+				FAF5D8EE254843890073339E /* GeoCoder.m in Sources */,
 				FA2735A32539ECC600F88529 /* NavigationController.m in Sources */,
 				FA78344B2531AEA3004AD2B7 /* main.m in Sources */,
 				FA27358E25388A4700F88529 /* FlightModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAF5D8F1254845C10073339E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF5D8F8254845C10073339E /* AviaSalesConceptTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAF5D8FB254845C10073339E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA7834342531AEA2004AD2B7 /* AviaSalesConcept */;
+			targetProxy = FAF5D8FA254845C10073339E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FA7834462531AEA3004AD2B7 /* LaunchScreen.storyboard */ = {
@@ -924,6 +1016,44 @@
 			};
 			name = Release;
 		};
+		FAF5D8FD254845C10073339E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RF42FG352F;
+				INFOPLIST_FILE = AviaSalesConceptTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = adeveloper.AviaSalesConceptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AviaSalesConcept.app/AviaSalesConcept";
+			};
+			name = Debug;
+		};
+		FAF5D8FE254845C10073339E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RF42FG352F;
+				INFOPLIST_FILE = AviaSalesConceptTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = adeveloper.AviaSalesConceptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AviaSalesConcept.app/AviaSalesConcept";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -941,6 +1071,15 @@
 			buildConfigurations = (
 				FA78344F2531AEA3004AD2B7 /* Debug */,
 				FA7834502531AEA3004AD2B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF5D8FC254845C10073339E /* Build configuration list for PBXNativeTarget "AviaSalesConceptTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF5D8FD254845C10073339E /* Debug */,
+				FAF5D8FE254845C10073339E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -8,6 +8,7 @@
 #import "MapViewController.h"
 #import "MapViewController+MapKit.h"
 #import <CoreLocation/CoreLocation.h>
+#import "GeoCoder.h"
 
 
 @interface MapViewController () {
@@ -48,10 +49,7 @@
     self.locationManager.delegate = self;
     
     [self.locationManager requestWhenInUseAuthorization];
-    
     [self.locationManager startUpdatingLocation];
-    
-    
     [self.locationManager requestLocation];
     
     CLLocationCoordinate2D userCoordinate = CLLocationCoordinate2DMake(58.592725, 16.185962);
@@ -66,8 +64,10 @@
     [self.mapView setCamera:mapCamera animated:true];
     [self setupUI];
     
-    
-    [self addressFromLocation: self.mapView.userLocation.location];
+    CLLocation* location = [[CLLocation alloc] initWithLatitude:58.592725 longitude:16.185962];
+    [[GeoCoder shared] addressFromLocation:location andCompletion:^(NSArray * _Nonnull places) {
+        NSLog(@"places: %@", places);
+    }];
 }
 
 - (void)setupUI {
@@ -85,38 +85,8 @@
 }
 
 
-- (void)addressFromLocation:(CLLocation *)location {
-    printf("🔆🔆🔆 addressFromLocation\n");
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-       
-        if ([placemarks count] > 0) {
-            for (MKPlacemark *placemark in placemarks) {
-                NSLog(@"🔆 %@", placemark.name);
-            }
-        }
-        
-        if (error) {
-            NSLog(@"❌ %@", error.localizedDescription);
-        }
-    }];
-}
 
-- (void)locationFromAddress:(NSString *)address {
-
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        
-        if ([placemarks count] > 0) {
-            for (MKPlacemark *placemark in placemarks) {
-                NSLog(@"%@", placemark.location);
-            }
-        }
-        
-    }];
-}
-
-
+// MARK: LocationManager
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     
