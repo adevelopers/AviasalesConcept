@@ -14,6 +14,7 @@
 @interface MapViewController () {
     @private
     NSArray* locations;
+    BOOL isPlaceNameAlreadyRequested;
 }
 
 @property (nonatomic) MKMapView* mapView;
@@ -44,6 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    isPlaceNameAlreadyRequested = NO;
+    
     self.locationManager = [CLLocationManager new];
     self.locationManager.activityType = CLActivityTypeAirborne;
     self.locationManager.delegate = self;
@@ -64,14 +67,6 @@
     [self.mapView setCamera:mapCamera animated:true];
     [self setupUI];
     
-    CLLocation* location = [[CLLocation alloc] initWithLatitude:58.592725 longitude:16.185962];
-    [[GeoCoder shared] addressFromLocation:location andCompletion:^(NSArray * _Nonnull places) {
-        NSString* cityName = ((CLPlacemark*)places.firstObject).name;
-        NSLog(@"places: %@", cityName);
-        if (cityName) {
-            self.title = cityName;
-        }
-    }];
 }
 
 - (void)setupUI {
@@ -88,6 +83,20 @@
     ]];
 }
 
+
+- (void)onceRequestNameOfPlace:(CLLocation*)location {
+    
+    [[GeoCoder shared] addressFromLocation:location andCompletion:^(NSArray * _Nonnull places) {
+        NSString* cityName = ((CLPlacemark*)places.firstObject).name;
+        NSLog(@"places: %@", cityName);
+        if (cityName) {
+            self.title = cityName;
+            self->isPlaceNameAlreadyRequested = YES;
+        }
+        
+    }];
+    
+}
 
 
 // MARK: LocationManager
@@ -106,6 +115,10 @@
     if (location) {
         NSLog(@"didUpdateLocations %@", location);
         [self.mapView setCenterCoordinate:location.coordinate animated:YES];
+        
+        if (isPlaceNameAlreadyRequested == NO) {
+            [self onceRequestNameOfPlace: location];
+        }
     }
     
 }
